@@ -3,16 +3,19 @@ import { Logo, Typography } from "@noisytrumpet/osi-dls"
 
 export default function Home() {
   return (
-    <div style={{ display: "grid", placeItems: "center", height: "100vh" }}>
+    <div
+      style={{
+        display: "grid",
+        placeItems: "center",
+        height: "100vh",
+      }}
+    >
       <Logo
-        variant="regular"
-        title="Logo Title"
-        description="Logo Description"
-        animated
+        variant="horizontal"
+        tagline="Splash Page"
+        title="OSI-LIFE"
+        description="OSI-LIFE Logo with tagline"
       />
-      <Typography variant="headline-1" textAlign="center">
-        OsiLIFE
-      </Typography>
     </div>
   )
 }

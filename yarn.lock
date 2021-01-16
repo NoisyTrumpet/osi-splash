@@ -1229,10 +1229,10 @@
     "@nodelib/fs.scandir" "2.1.3"
     fastq "^1.6.0"
 
-"@noisytrumpet/osi-dls@^1.6.0":
-  version "1.6.0"
-  resolved "https://registry.yarnpkg.com/@noisytrumpet/osi-dls/-/osi-dls-1.6.0.tgz#b16279d41f432a55d28748b551f4fba5c643ef55"
-  integrity sha512-Dw+MULnMblSpi0cZJam6mNAmaGub4U2y9fRoNnyrr2WGEa0yV/xrmkwmjGg1G/J0MH+iAOcmDJsvxTXkRNU0gQ==
+"@noisytrumpet/osi-dls@^1.7.0":
+  version "1.7.0"
+  resolved "https://registry.yarnpkg.com/@noisytrumpet/osi-dls/-/osi-dls-1.7.0.tgz#d746aa13e1119dbbbaf78ee5ba29f8109bff625b"
+  integrity sha512-2A4m8s6iTVozDrDRr5OxHg5LqmMfm2q7RogI5iJzQYtx6BIoVgbZaDT6ZC01wGt+UoAc7wUaBrnXC9sbXq2WcQ==
   dependencies:
     formik "2.1.4"
     interweave "^12.6.0"
@@ -5198,6 +5198,11 @@ gatsby-page-utils@^0.3.0:
     glob "^7.1.6"
     lodash "^4.17.20"
     micromatch "^4.0.2"
+
+gatsby-plugin-google-fonts@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-google-fonts/-/gatsby-plugin-google-fonts-1.0.1.tgz#d71054f7bf207b9a8da227380369e18e6f4e0201"
+  integrity sha512-p1NVkn27GUnDA5qHM+Z4cCcLCJIardzZXMon3640sT4xuL/AZJbsx3HEt2KY/5oZu0UXIkytkxzV2Da4rQeUIg==
 
 gatsby-plugin-page-creator@^2.4.0:
   version "2.4.0"

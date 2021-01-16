@@ -6,5 +6,13 @@
 
 module.exports = {
   /* Your site config here */
-  plugins: [],
+  plugins: [
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [`Baloo 2\:400,500,600,700,900`],
+        display: "swap",
+      },
+    },
+  ],
 }

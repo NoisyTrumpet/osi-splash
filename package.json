@@ -14,8 +14,9 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
-    "@noisytrumpet/osi-dls": "^1.6.0",
+    "@noisytrumpet/osi-dls": "^1.7.0",
     "gatsby": "^2.26.1",
+    "gatsby-plugin-google-fonts": "^1.0.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0"
   },
