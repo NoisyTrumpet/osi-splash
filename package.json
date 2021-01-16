@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-hello-world",
-  "private": true,
-  "description": "A simplified bare-bones starter for Gatsby",
+  "name": "osi-splash",
+  "private": false,
+  "description": "OSI-LIFE Splash Page",
   "version": "0.1.0",
-  "license": "0BSD",
+  "license": "UNLICENSED",
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
@@ -14,7 +14,7 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
-    "@noisytrumpet/osi-dls": "^1.5.0",
+    "@noisytrumpet/osi-dls": "^1.6.0",
     "gatsby": "^2.26.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0"

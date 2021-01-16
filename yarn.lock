@@ -1229,10 +1229,10 @@
     "@nodelib/fs.scandir" "2.1.3"
     fastq "^1.6.0"
 
-"@noisytrumpet/osi-dls@^1.4.0":
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/@noisytrumpet/osi-dls/-/osi-dls-1.4.0.tgz#50eec21be674aa4ef5adfddf731e91d677bb5d98"
-  integrity sha512-/Ob7jWn97YrtL8LizDfCRUq6J+40KxMJ8X60zXqJ9MJaax666y5GXR6cDTaohMZSrkajTZrWHoTXBHsv5ev7HA==
+"@noisytrumpet/osi-dls@^1.6.0":
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/@noisytrumpet/osi-dls/-/osi-dls-1.6.0.tgz#b16279d41f432a55d28748b551f4fba5c643ef55"
+  integrity sha512-Dw+MULnMblSpi0cZJam6mNAmaGub4U2y9fRoNnyrr2WGEa0yV/xrmkwmjGg1G/J0MH+iAOcmDJsvxTXkRNU0gQ==
   dependencies:
     formik "2.1.4"
     interweave "^12.6.0"
