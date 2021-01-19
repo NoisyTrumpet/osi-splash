@@ -1,0 +1,12 @@
+{
+  "name": "OSI LIFE Splash Page",
+  "description": "Temporary Splash Page for OSI LIFE",
+  "keywords": [
+    "contentful",
+    "gatsby",
+    "static",
+    "ssg"
+  ],
+  "repository": "https://github.com/NoisyTrumpet/osi-splash",
+  "success_url": "/"
+}
