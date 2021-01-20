@@ -5,7 +5,7 @@ import { Helmet } from 'react-helmet'
 import Hero from '../components/hero'
 import Layout from '../components/layout'
 import ArticlePreview from '../components/article-preview'
-import { Typography } from '@noisytrumpet/osi-dls'
+import { Typography, Grid, Wrapper, Button } from '@noisytrumpet/osi-dls'
 
 class RootIndex extends React.Component {
   render() {
@@ -16,7 +16,25 @@ class RootIndex extends React.Component {
     return (
       <Layout location={this.props.location}>
         <Helmet title={siteTitle} />
-        <Typography variant="headline-2">OsiLIFE Splash Page</Typography>
+        {/* @TODO: Hero Section */}
+        {/* Vision & Mission Section */}
+        <Grid grid={2} landscape={2} portrait={2} mobile={1} gap={16}>
+          <Wrapper addClass="vision">
+            <Typography variant="headline-2">Our Vision</Typography>
+            <Typography variant="body">
+              Be a partner of choice for our clients by helping them pioneer,
+              champion and sustain innovative healthcare practices that drive up
+              patient care quality - and drive down costs.
+            </Typography>
+          </Wrapper>
+          <Wrapper addClass="mission">
+            <Typography variant="headline-2">Our Mission</Typography>
+            <Typography variant="body">
+              "better health care for every life entrusted to us... and improved
+              efficiencies for every care team we serve"
+            </Typography>
+          </Wrapper>
+        </Grid>
       </Layout>
     )
   }

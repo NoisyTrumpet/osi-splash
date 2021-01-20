@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import { Shell } from '@noisytrumpet/osi-dls'
+import '../styles/main.scss'
 
 class Template extends React.Component {
   render() {
