@@ -957,6 +957,14 @@
     lodash "^4.17.19"
     to-fast-properties "^2.0.0"
 
+"@contentful/rich-text-html-renderer@^14.1.2":
+  version "14.1.2"
+  resolved "https://registry.yarnpkg.com/@contentful/rich-text-html-renderer/-/rich-text-html-renderer-14.1.2.tgz#fa346adb91ddba8e33e50a68f179319258999aaa"
+  integrity sha512-WdIr+WsaOCALMykW7RG8Cy4JTzQwhVgy+86V9AgKm8pRT3L7d5Qx88VGQTmMh6JgtYyKbOJzKm8fGgKPKHz4TA==
+  dependencies:
+    "@contentful/rich-text-types" "^14.1.2"
+    escape-html "^1.0.3"
+
 "@contentful/rich-text-react-renderer@^14.1.2":
   version "14.1.2"
   resolved "https://registry.yarnpkg.com/@contentful/rich-text-react-renderer/-/rich-text-react-renderer-14.1.2.tgz#b7fff19faa0512f034f1717774a0d9b348bb07fc"
@@ -1491,10 +1499,10 @@
     "@nodelib/fs.scandir" "2.1.4"
     fastq "^1.6.0"
 
-"@noisytrumpet/osi-dls@^1.9.0":
-  version "1.9.0"
-  resolved "https://registry.yarnpkg.com/@noisytrumpet/osi-dls/-/osi-dls-1.9.0.tgz#cf2a1c036fe1e62001d2dbd172d94e1984bc1557"
-  integrity sha512-F3DBbyAGjSBaAXBfn/aNi0dIQsJdcb3HeIs8/zHtZE94wuRQv3fVibTgag6Ek6MP/7SJa3/15A6iNjV9xEUp+A==
+"@noisytrumpet/osi-dls@1.11.0":
+  version "1.11.0"
+  resolved "https://registry.yarnpkg.com/@noisytrumpet/osi-dls/-/osi-dls-1.11.0.tgz#0cbc302be96ab84b37c79fc073f2b30cbfae341a"
+  integrity sha512-1z4EGnsDgixNHW5+PSS5Hv5k2Ayu/gzMmw081JNkq0jbSd4yd3K2A6+k3Ib2t7YEUf8/CzGxS6/h77A8sXUang==
   dependencies:
     formik "2.1.4"
     interweave "^12.6.0"
@@ -8036,7 +8044,7 @@ internal-slot@^1.0.2:
     has "^1.0.3"
     side-channel "^1.0.2"
 
-interweave@^12.6.0:
+interweave@^12.6.0, interweave@^12.7.0:
   version "12.7.0"
   resolved "https://registry.yarnpkg.com/interweave/-/interweave-12.7.0.tgz#a4b7d7c116bdd54fc882eb2271844a1180b506cb"
   integrity sha512-B26CWAIFST2ld+f0w1nhjsnEHXQWGRsiJdh8on34RYn5SPAjYnCi2rl2Rzxuz5Mqm2FWWxzIeQK6Fb1MPYzKqg==

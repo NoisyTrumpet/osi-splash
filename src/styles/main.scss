@@ -1,1 +1,10 @@
-@import "../../static/fonts/index.css"
+@import "../../static/fonts/index.css";
+
+
+nav {
+    z-index: 9999;
+    background-color: white;
+}
+.logo-wrapper {
+    margin-left: 2rem!important;
+}

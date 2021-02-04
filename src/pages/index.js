@@ -1,43 +1,72 @@
-import React from 'react'
-import { graphql } from 'gatsby'
-import get from 'lodash/get'
-import { Helmet } from 'react-helmet'
-import Hero from '../components/hero'
-import Layout from '../components/layout'
-import ArticlePreview from '../components/article-preview'
-import { Typography, Grid, Wrapper, Button } from '@noisytrumpet/osi-dls'
+import React from "react"
+import { graphql } from "gatsby"
+import { Helmet } from "react-helmet"
+import Layout from "../components/layout"
+import { documentToHtmlString } from "@contentful/rich-text-html-renderer"
 
-class RootIndex extends React.Component {
-  render() {
-    const siteTitle = get(this, 'props.data.site.siteMetadata.title')
-    const posts = get(this, 'props.data.allContentfulBlogPost.edges')
-    const [author] = get(this, 'props.data.allContentfulPerson.edges')
+import { Typography, Grid, Wrapper, Hero } from "@noisytrumpet/osi-dls"
 
-    return (
-      <Layout location={this.props.location}>
-        <Helmet title={siteTitle} />
-        {/* @TODO: Hero Section */}
-        {/* Vision & Mission Section */}
-        <Grid grid={2} landscape={2} portrait={2} mobile={1} gap={16}>
-          <Wrapper addClass="vision">
-            <Typography variant="headline-2">Our Vision</Typography>
-            <Typography variant="body">
-              Be a partner of choice for our clients by helping them pioneer,
-              champion and sustain innovative healthcare practices that drive up
-              patient care quality - and drive down costs.
-            </Typography>
-          </Wrapper>
-          <Wrapper addClass="mission">
-            <Typography variant="headline-2">Our Mission</Typography>
-            <Typography variant="body">
-              "better health care for every life entrusted to us... and improved
-              efficiencies for every care team we serve"
-            </Typography>
-          </Wrapper>
-        </Grid>
-      </Layout>
-    )
-  }
+const RootIndex = ({ data }) => {
+  const siteTitle = data?.site.siteMetadata.title
+  const posts = data.allContentfulBlogPost.edges
+
+  const missionText = data.contentfulSplashPage.ourMission.internal.content
+  const heroText = data.contentfulSplashPage.heroTagline
+  const heroImage = data.contentfulSplashPage.heroImage.fluid.srcSet
+  console.log(data)
+
+  return (
+    <Layout location="/">
+      <Hero
+        presetLayout="50/50, Osi"
+        headline1={heroText}
+        bodySubtitleWidth
+        bodySubtitle=""
+      />
+      {/* @TODO: Hero Section */}
+      {/* @TODO: Form Section */}
+      {/* Vision & Mission Section */}
+      <Grid grid={2} landscape={2} portrait={2} mobile={1} gap={16}>
+        <Wrapper addClass="about">
+          <Typography variant="headline-2">About</Typography>
+          <Typography variant="body-medium">
+            OsiLIFE combines reliabletechnology with a human touch to partner
+            with doctors and their clinical team to provide a more personalized
+            healthcare experience for their patients.
+          </Typography>
+          <br />
+          <br />
+          <Typography variant="body-medium">
+            {" "}
+            Our diverse team of experienced and certified care managers works
+            closely with healthcare providers to offer remote patient monitoring
+            services for patients through the use of home based sensors, routine
+            phone call check-ins and summary reporting of patient information
+            and trends.
+          </Typography>
+          <br />
+          <br />
+          <Typography variant="body-medium">
+            OsiLIFE Care Managers are the ‘Patient Care Partners’ you can depend
+            on to collectively address the challenges of managing large patient
+            populations, while driving value up and cost down for providers and
+            patients alike.
+          </Typography>
+        </Wrapper>
+        <Wrapper addClass="vision-mission">
+          <Typography variant="headline-4">Our Vision...</Typography>
+          <Typography variant="body-medium">
+            Be a partner of choice for our clients by helping them pioneer,
+            champion and sustain innovative healthcare practices that drive up
+            patient care quality - and drive down costs.
+          </Typography>
+          <Typography variant="headline-4">Our Mission...</Typography>
+          <Typography variant="body-medium">{missionText}</Typography>
+        </Wrapper>
+      </Grid>
+      {/* @TODO: Benefits Section */}
+    </Layout>
+  )
 }
 
 export default RootIndex
@@ -65,30 +94,65 @@ export const pageQuery = graphql`
             childMarkdownRemark {
               html
             }
+            internal {
+              content
+            }
           }
         }
       }
     }
-    allContentfulPerson(
-      filter: { contentful_id: { eq: "15jwOBqpxqSAOy2eOO4S0m" } }
-    ) {
-      edges {
-        node {
-          name
-          shortBio {
-            shortBio
-          }
-          title
-          heroImage: image {
-            fluid(
-              maxWidth: 1180
-              maxHeight: 480
-              resizingBehavior: PAD
-              background: "rgb:000000"
-            ) {
-              ...GatsbyContentfulFluid_tracedSVG
-            }
-          }
+    contentfulSplashPage {
+      childContentfulSplashPageOurMissionTextNode {
+        childMarkdownRemark {
+          html
+        }
+      }
+      logoSubText
+      logoType
+      ourMission {
+        childMarkdownRemark {
+          html
+        }
+        internal {
+          content
+        }
+      }
+      ourVision {
+        childMarkdownRemark {
+          html
+        }
+        internal {
+          content
+        }
+      }
+      heroTagline
+      heroImage {
+        fluid(maxWidth: 1920, maxHeight: 800, resizingBehavior: SCALE) {
+          ...GatsbyContentfulFluid_tracedSVG
+        }
+      }
+      childrenContentfulSplashPageOurVisionTextNode {
+        childMarkdownRemark {
+          html
+        }
+        internal {
+          content
+        }
+      }
+      childrenContentfulSplashPageOurMissionTextNode {
+        childMarkdownRemark {
+          html
+        }
+        internal {
+          content
+        }
+      }
+      childContentfulSplashPageOurVisionTextNode {
+        childMarkdownRemark {
+          html
+        }
+        internal {
+          content
         }
       }
     }

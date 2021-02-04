@@ -1,7 +1,7 @@
-import React from 'react'
-import { Link } from 'gatsby'
-import { Shell } from '@noisytrumpet/osi-dls'
-import '../styles/main.scss'
+import React from "react"
+import { Link } from "gatsby"
+import { Shell } from "@noisytrumpet/osi-dls"
+import "../styles/main.scss"
 
 class Template extends React.Component {
   render() {
@@ -13,7 +13,7 @@ class Template extends React.Component {
       rootPath = __PATH_PREFIX__ + `/`
     }
 
-    return <Shell contained>{children}</Shell>
+    return <Shell>{children}</Shell>
   }
 }
 
