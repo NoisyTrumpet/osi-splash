@@ -1,12 +1,10 @@
-import React from 'react'
-import { Link } from 'gatsby'
-import { Shell } from '@noisytrumpet/osi-dls'
-import '../styles/main.scss'
+import React from "react"
+import { Shell } from "@noisytrumpet/osi-dls"
+import "../styles/main.scss"
 
 class Template extends React.Component {
   render() {
-    const { location, children } = this.props
-    let header
+    const { children } = this.props
 
     let rootPath = `/`
     if (typeof __PREFIX_PATHS__ !== `undefined` && window.__PREFIX_PATHS__) {

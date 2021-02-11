@@ -1,9 +1,7 @@
 import React from "react"
-import { graphql, useStaticQuery } from "gatsby"
-import { Helmet } from "react-helmet"
+import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import { BLOCKS, MARKS } from "@contentful/rich-text-types"
-import Interweave from "interweave"
 import { renderRichText } from "gatsby-source-contentful/rich-text"
 import clinic from "../../static/svg/clinic.svg"
 import remote from "../../static/svg/remote.svg"
@@ -20,8 +18,8 @@ import {
 } from "@noisytrumpet/osi-dls"
 
 const RootIndex = ({ data }) => {
-  const siteTitle = data?.site.siteMetadata.title
-  const posts = data.allContentfulBlogPost.edges
+  console.log(data)
+  // const siteTitle = data?.site.siteMetadata.title
 
   const missionText = data.contentfulSplashPage.ourMission.internal.content
   const visionText = data.contentfulSplashPage.ourVision.internal.content
@@ -147,41 +145,10 @@ export const pageQuery = graphql`
         title
       }
     }
-    allContentfulBlogPost(sort: { fields: [publishDate], order: DESC }) {
-      edges {
-        node {
-          title
-          slug
-          publishDate(formatString: "MMMM Do, YYYY")
-          tags
-          heroImage {
-            fluid(maxWidth: 350, maxHeight: 196, resizingBehavior: SCALE) {
-              ...GatsbyContentfulFluid_tracedSVG
-            }
-          }
-          description {
-            childMarkdownRemark {
-              html
-            }
-            internal {
-              content
-            }
-          }
-        }
-      }
-    }
     contentfulSplashPage {
-      childContentfulSplashPageOurMissionTextNode {
-        childMarkdownRemark {
-          html
-        }
-      }
       logoSubText
       logoType
       ourMission {
-        childMarkdownRemark {
-          html
-        }
         internal {
           content
         }
@@ -194,43 +161,11 @@ export const pageQuery = graphql`
         }
       }
       ourVision {
-        childMarkdownRemark {
-          html
-        }
         internal {
           content
         }
       }
       heroTagline
-      heroImage {
-        fluid(maxWidth: 1920, maxHeight: 800, resizingBehavior: SCALE) {
-          ...GatsbyContentfulFluid_tracedSVG
-        }
-      }
-      childrenContentfulSplashPageOurVisionTextNode {
-        childMarkdownRemark {
-          html
-        }
-        internal {
-          content
-        }
-      }
-      childrenContentfulSplashPageOurMissionTextNode {
-        childMarkdownRemark {
-          html
-        }
-        internal {
-          content
-        }
-      }
-      childContentfulSplashPageOurVisionTextNode {
-        childMarkdownRemark {
-          html
-        }
-        internal {
-          content
-        }
-      }
     }
   }
 `
