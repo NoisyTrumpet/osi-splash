@@ -36,6 +36,13 @@ module.exports = {
     "gatsby-plugin-sharp",
     `gatsby-plugin-sass`,
     {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "SVG",
+        path: `${__dirname}/static/svg/`,
+      },
+    },
+    {
       resolve: "gatsby-source-contentful",
       options: contentfulConfig,
     },

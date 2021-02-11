@@ -1,19 +1,93 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, useStaticQuery } from "gatsby"
 import { Helmet } from "react-helmet"
 import Layout from "../components/layout"
-import { documentToHtmlString } from "@contentful/rich-text-html-renderer"
+import { BLOCKS, MARKS } from "@contentful/rich-text-types"
+import Interweave from "interweave"
+import { renderRichText } from "gatsby-source-contentful/rich-text"
+import clinic from "../../static/svg/clinic.svg"
+import remote from "../../static/svg/remote.svg"
+import patient from "../../static/svg/patient.svg"
 
-import { Typography, Grid, Wrapper, Hero } from "@noisytrumpet/osi-dls"
+import "./index.scss"
+
+import {
+  Typography,
+  Grid,
+  Wrapper,
+  Hero,
+  InlineSVG,
+} from "@noisytrumpet/osi-dls"
 
 const RootIndex = ({ data }) => {
   const siteTitle = data?.site.siteMetadata.title
   const posts = data.allContentfulBlogPost.edges
 
   const missionText = data.contentfulSplashPage.ourMission.internal.content
+  const visionText = data.contentfulSplashPage.ourVision.internal.content
   const heroText = data.contentfulSplashPage.heroTagline
-  const heroImage = data.contentfulSplashPage.heroImage.fluid.srcSet
-  console.log(data)
+
+  const benefits = data.contentfulSplashPage.benefitsAll
+
+  const Bold = ({ children }) => (
+    <Typography variant="body-medium" className="bold">
+      {children}
+    </Typography>
+  )
+  const Text = ({ children }) => (
+    <Typography htmlTagOverride="p">{children}</Typography>
+  )
+
+  const options = {
+    renderMark: {
+      [MARKS.BOLD]: text => <Bold>{text}</Bold>,
+    },
+    renderNode: {
+      [BLOCKS.text]: (node, children) => <Text>{children}</Text>,
+      [BLOCKS.EMBEDDED_ASSET]: node => {
+        return (
+          <>
+            <h2>Embedded Asset</h2>
+            <pre>
+              <code>{JSON.stringify(node, null, 2)}</code>
+            </pre>
+          </>
+        )
+      },
+    },
+  }
+
+  const Benefits = () => {
+    return (
+      benefits &&
+      benefits.map(benefit => (
+        <div className={`benefit-block`}>
+          {benefit.title === "Clinic Operations" && (
+            <Typography variant="headline-3" color="brand-white">
+              Benefits
+            </Typography>
+          )}
+          <div>
+            {benefit.icon === "clinic-op" && (
+              <InlineSVG className="icon" src={clinic} />
+            )}
+            {benefit.icon === "patient" && (
+              <InlineSVG className="icon" src={patient} />
+            )}
+            {benefit.icon === "remote-icon" && (
+              <InlineSVG className="icon" src={remote} />
+            )}
+            <Typography variant="headline-4" color="brand-white">
+              {benefit.title}
+            </Typography>
+            <Typography variant="body" color="brand-white">
+              {renderRichText(benefit.bodyText, options)}
+            </Typography>
+          </div>
+        </div>
+      ))
+    )
+  }
 
   return (
     <Layout location="/">
@@ -23,9 +97,6 @@ const RootIndex = ({ data }) => {
         bodySubtitleWidth
         bodySubtitle=""
       />
-      {/* @TODO: Hero Section */}
-      {/* @TODO: Form Section */}
-      {/* Vision & Mission Section */}
       <Grid grid={2} landscape={2} portrait={2} mobile={1} gap={16}>
         <Wrapper addClass="about">
           <Typography variant="headline-2">About</Typography>
@@ -55,16 +126,14 @@ const RootIndex = ({ data }) => {
         </Wrapper>
         <Wrapper addClass="vision-mission">
           <Typography variant="headline-4">Our Vision...</Typography>
-          <Typography variant="body-medium">
-            Be a partner of choice for our clients by helping them pioneer,
-            champion and sustain innovative healthcare practices that drive up
-            patient care quality - and drive down costs.
-          </Typography>
+          <Typography variant="body-medium">{visionText}</Typography>
           <Typography variant="headline-4">Our Mission...</Typography>
           <Typography variant="body-medium">{missionText}</Typography>
         </Wrapper>
       </Grid>
-      {/* @TODO: Benefits Section */}
+      <Grid grid={3} landscape={3} portrait={1} mobile={1} gap={0}>
+        <Benefits />
+      </Grid>
     </Layout>
   )
 }
@@ -115,6 +184,13 @@ export const pageQuery = graphql`
         }
         internal {
           content
+        }
+      }
+      benefitsAll {
+        title
+        icon
+        bodyText {
+          raw
         }
       }
       ourVision {
