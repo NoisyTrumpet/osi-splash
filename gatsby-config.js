@@ -46,12 +46,5 @@ module.exports = {
       resolve: "gatsby-source-contentful",
       options: contentfulConfig,
     },
-    {
-      resolve: `gatsby-plugin-google-fonts`,
-      options: {
-        fonts: [`Baloo 2\:400,500,600,700,900`],
-        display: "swap",
-      },
-    },
   ],
 }
