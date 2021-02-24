@@ -21,5 +21,8 @@
       border-radius: rem(5px) !important;
       color: map-get($colors, "brand-white") !important;
     }
+    button {
+      margin-left: auto;
+    }
   }
 }

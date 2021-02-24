@@ -19,11 +19,11 @@ import info from "../../../static/svg/info.svg"
 import ContactForm from "./Fragments/ContactForm"
 import "./Home.scss"
 
-const Home = ({ missionText, visionText, heroText, benefits }) => {
+const Home = ({ missionText, visionText, heroText, benefits, heroImage }) => {
   const defaultImgSrc = {
-    imageDesktop: "https://picsum.photos/645/640",
-    imageTablet: "https://picsum.photos/516/512",
-    imageMobile: "https://picsum.photos/378/375",
+    imageDesktop: heroImage.fluid.src,
+    imageTablet: heroImage.fluid.src,
+    imageMobile: heroImage.fluid.src,
   }
 
   const Bold = ({ children }) => (
@@ -96,6 +96,8 @@ const Home = ({ missionText, visionText, heroText, benefits }) => {
         headline1="Remote patient monitoring technology with a human touch"
         bodySubtitleWidth="false"
         bodySubtitle=""
+        wave
+        waveColorBottom="primary"
       />
       <ContactForm
         title="Learn More"

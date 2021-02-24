@@ -2,6 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../layouts/index"
 import { Home } from "../features/Home"
+import SEO from "../components/SEO"
 
 import "./index.scss"
 
@@ -11,14 +12,17 @@ const RootIndex = ({ data }) => {
   const heroText = data.contentfulSplashPage.heroTagline
 
   const benefits = data.contentfulSplashPage.benefitsAll
-
+  const heroImage = data.contentfulSplashPage.heroImage
+  console.log(heroImage)
   return (
     <Layout location="/">
+      <SEO />
       <Home
         missionText={missionText}
         visionText={visionText}
         heroText={heroText}
         benefits={benefits}
+        heroImage={heroImage}
       />
     </Layout>
   )
@@ -39,6 +43,11 @@ export const pageQuery = graphql`
       ourMission {
         internal {
           content
+        }
+      }
+      heroImage {
+        fluid(maxWidth: 800) {
+          ...GatsbyContentfulFluid_withWebp
         }
       }
       benefitsAll {

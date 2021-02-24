@@ -25,7 +25,10 @@ if (!spaceId || !accessToken) {
 
 module.exports = {
   siteMetadata: {
-    title: "OSI LIFE Splash Page",
+    title: "OsiLIFE",
+    description: "OsiLIFE Description",
+    image: "https://www.noisytrumpet.com/wp-content/uploads/2021/01/osi.png",
+    url: "https://www.osilife.com/",
   },
   pathPrefix: "/osi-splash",
   /* Your site config here */
