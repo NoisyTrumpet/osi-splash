@@ -1,48 +1,46 @@
 .shell {
-    height: 100% !important;
+  height: 100% !important;
 }
 
 .benefit-block {
-    display: grid;
-    align-items: center;
+  display: grid;
+  align-items: center;
 
-    @media (min-width: 767px) {
-        margin-top: 30px;
-        margin-bottom: 15px;
+  @media (min-width: 767px) {
+    margin-top: 30px;
+    margin-bottom: 15px;
+  }
+
+  .icon {
+    max-width: 120px;
+    margin: 0 auto;
+    display: block;
+    width: fit-content;
+  }
+
+  &:nth-child(odd) {
+    background-color: #ffa500;
+  }
+
+  &:first-child {
+    @media (max-width: 767px) {
+      margin-top: 30px;
     }
+  }
 
-    .icon {
-        max-width: 120px;
-        margin: 0 auto;
-        display: block;
-        width: fit-content;
+  &:last-child {
+    @media (max-width: 767px) {
+      margin-bottom: 15px;
     }
-
-
-    &:nth-child(odd) {
-        background-color: #ffa500;
-
-    }
-
-    &:first-child {
-        @media (max-width: 767px) {
-            margin-top: 30px;
-        }
-    }
-
-    &:last-child {
-        @media (max-width: 767px) {
-            margin-bottom: 15px;
-        }
-    }
-    &:nth-child(even) {
-        background-color: #00adbc;
-    }
-    padding: 30px;
+  }
+  &:nth-child(even) {
+    background-color: #00adbc;
+  }
+  padding: 30px;
 }
 
 .hero {
-    @media (min-width: 767px) {
-        height: 650px;
-    }
+  @media (min-width: 767px) {
+    height: 650px;
+  }
 }
