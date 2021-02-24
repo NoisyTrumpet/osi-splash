@@ -10,10 +10,13 @@ import {
   InlineSVG,
   Footer,
 } from "@noisytrumpet/osi-dls"
+
 // SVGs
 import clinic from "../../../static/svg/clinic.svg"
 import remote from "../../../static/svg/remote.svg"
 import patient from "../../../static/svg/patient.svg"
+import info from "../../../static/svg/info.svg"
+import ContactForm from "./Fragments/ContactForm"
 import "./Home.scss"
 
 const Home = ({ missionText, visionText, heroText, benefits }) => {
@@ -85,50 +88,61 @@ const Home = ({ missionText, visionText, heroText, benefits }) => {
   return (
     <>
       <Hero
-        presetLayout="50/50, Osi"
-        headline1={heroText}
-        bodySubtitleWidth
-        bodySubtitle=""
         image={defaultImgSrc}
+        heroSVG={info}
+        headlineFontStyle="h1"
         imageAltText={heroText}
+        presetLayout="50/50, Osi"
+        headline1="Remote patient monitoring technology with a human touch"
+        bodySubtitleWidth="false"
+        bodySubtitle=""
       />
-      <Grid grid={2} landscape={2} portrait={2} mobile={1} gap={16}>
-        <Wrapper addClass="about">
-          <Typography variant="headline-2">About</Typography>
-          <Typography variant="body-medium">
-            OsiLIFE combines reliabletechnology with a human touch to partner
-            with doctors and their clinical team to provide a more personalized
-            healthcare experience for their patients.
-          </Typography>
-          <br />
-          <br />
-          <Typography variant="body-medium">
-            {" "}
-            Our diverse team of experienced and certified care managers works
-            closely with healthcare providers to offer remote patient monitoring
-            services for patients through the use of home based sensors, routine
-            phone call check-ins and summary reporting of patient information
-            and trends.
-          </Typography>
-          <br />
-          <br />
-          <Typography variant="body-medium">
-            OsiLIFE Care Managers are the ‘Patient Care Partners’ you can depend
-            on to collectively address the challenges of managing large patient
-            populations, while driving value up and cost down for providers and
-            patients alike.
-          </Typography>
-        </Wrapper>
-        <Wrapper addClass="vision-mission">
-          <Typography variant="headline-4">Our Vision...</Typography>
-          <Typography variant="body-medium">{visionText}</Typography>
-          <Typography variant="headline-4">Our Mission...</Typography>
-          <Typography variant="body-medium">{missionText}</Typography>
-        </Wrapper>
-      </Grid>
-      <Grid grid={3} landscape={3} portrait={1} mobile={1} gap={0}>
-        <Benefits />
-      </Grid>
+      <ContactForm
+        title="Learn More"
+        subtitle="Share information below to stay up to date with the latest at OsiLIFE"
+      />
+      <div id="about">
+        <Grid grid={2} landscape={2} portrait={2} mobile={1} gap={16}>
+          <Wrapper addClass="about" id="about">
+            <Typography variant="headline-2">About</Typography>
+            <Typography variant="body-medium">
+              OsiLIFE combines reliable technology with a human touch to partner
+              with doctors and their clinical team to provide a more
+              personalized healthcare experience for their patients.
+            </Typography>
+            <br />
+            <br />
+            <Typography variant="body-medium">
+              {" "}
+              Our diverse team of experienced and certified care managers works
+              closely with healthcare providers to offer remote patient
+              monitoring services for patients through the use of home based
+              sensors, routine phone call check-ins and summary reporting of
+              patient information and trends.
+            </Typography>
+            <br />
+            <br />
+            <Typography variant="body-medium">
+              OsiLIFE Care Managers are the ‘Patient Care Partners’ you can
+              depend on to collectively address the challenges of managing large
+              patient populations, while driving value up and cost down for
+              providers and patients alike.
+            </Typography>
+          </Wrapper>
+          <Wrapper addClass="vision-mission">
+            <Typography variant="headline-4">Our Vision...</Typography>
+            <Typography variant="body-medium">{visionText}</Typography>
+            <Typography variant="headline-4">Our Mission...</Typography>
+            <Typography variant="body-medium">{missionText}</Typography>
+          </Wrapper>
+        </Grid>
+      </div>
+      <div id="benefits">
+        <Grid grid={3} landscape={3} portrait={1} mobile={1} gap={0}>
+          <Benefits />
+        </Grid>
+      </div>
+
       <Footer />
     </>
   )

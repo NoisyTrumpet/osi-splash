@@ -1,8 +1,7 @@
 import React from "react"
-import PropTypes from "prop-types"
 
 const FourOFour = () => {
-  return <>"Test"</>
+  return <>404 Page</>
 }
 
 export default FourOFour

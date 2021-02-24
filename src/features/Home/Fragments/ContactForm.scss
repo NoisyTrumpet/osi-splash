@@ -1,0 +1,25 @@
+@import "../../../styles/main.scss";
+
+.form-section {
+  display: grid;
+  place-items: center;
+  padding: $space-40;
+  form {
+    max-width: 1200px;
+    margin-top: $space-24;
+    position: relative;
+    .two-field-wrapper {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      grid-template-rows: 1fr;
+      gap: 0px $space-12;
+      grid-template-areas: ". .";
+    }
+    .typography-field-label {
+      background-color: map-get($colors, "accentA") !important;
+      padding: rem(5px) !important;
+      border-radius: rem(5px) !important;
+      color: map-get($colors, "brand-white") !important;
+    }
+  }
+}

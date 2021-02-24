@@ -1,3 +1,5 @@
+@import "../../styles/main.scss";
+
 .benefit-block {
   display: grid;
   align-items: center;
@@ -35,8 +37,6 @@
   padding: 30px;
 }
 
-.hero {
-  @media (min-width: 767px) {
-    height: 650px;
-  }
+#about {
+  padding: $space-40 0;
 }
