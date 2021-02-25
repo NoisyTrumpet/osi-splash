@@ -1,8 +1,17 @@
 @import "@noisytrumpet/osi-dls/lib/styles/shared.scss";
 
-nav {
+.nav {
   z-index: 9999;
   background-color: white;
+  height: 7rem;
+  .logo-wrapper {
+    height: 7rem;
+    svg {
+      @include media($mq-desktop) {
+        max-width: rem(200px) !important;
+      }
+    }
+  }
 }
 .logo-wrapper {
   margin-left: 2rem !important;

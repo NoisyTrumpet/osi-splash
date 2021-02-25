@@ -53,9 +53,9 @@ const ContactForm = ({ title, subtitle }) => {
           </Form>
         </Formik>
       </section>
-      <div className="about-wave">
+      {/* <div className="about-wave">
         <Wave colorTop="primary" colorBottom="brand-white" />
-      </div>
+      </div> */}
     </div>
   )
 }

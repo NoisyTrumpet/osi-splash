@@ -3,7 +3,6 @@ import { graphql } from "gatsby"
 import Layout from "../layouts/index"
 import { Home } from "../features/Home"
 import SEO from "../components/SEO"
-import "./index.scss"
 
 const RootIndex = ({ data }) => {
   const missionText = data.contentfulSplashPage.ourMission.internal.content

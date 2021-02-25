@@ -101,8 +101,6 @@ const Home = ({ missionText, visionText, heroText, benefits, heroImage }) => {
         presetLayout="50/50, Osi"
         headline1="Remote patient monitoring technology with a human touch"
         bodySubtitleWidth
-        wave
-        waveColorBottom="primary"
       />
       <ContactForm
         title="Learn More"

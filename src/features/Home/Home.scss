@@ -2,10 +2,8 @@
 
 .hero {
   #infographic {
-    max-height: 400px;
-    @include media($mq-tablet-l) {
-      max-width: 100%;
-    }
+    max-width: 100%;
+    width: 600px;
   }
 }
 
@@ -30,10 +28,7 @@
     width: fit-content;
   }
   span {
-    p:nth-child(2) {
-      margin-top: $space-24;
-    }
-    p:nth-child(3) {
+    p {
       margin-top: $space-24;
     }
   }
@@ -43,12 +38,16 @@
   }
 
   &:last-child {
-    padding-top: rem(90px);
+    @include media($mq-tablet-up) {
+      padding-top: rem(90px);
+    }
   }
 
   &:nth-child(even) {
     background-color: #00adbc;
-    padding-top: rem(90px);
+    @include media($mq-tablet-up) {
+      padding-top: rem(90px);
+    }
     @media (max-width: 380px) {
       .typography-headline {
         font-size: $space-24;
@@ -63,7 +62,7 @@
 }
 
 .hero h1 {
-  font-family: "Baloo 2 Bold";
+  font-family: "Baloo 2 Medium";
   @include media($mq-tablet-l) {
     font-size: 32px;
   }
