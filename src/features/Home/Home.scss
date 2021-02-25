@@ -1,5 +1,13 @@
 @import "../../styles/main.scss";
 
+.hero {
+  #infographic {
+    @include media($mq-tablet-l) {
+      max-width: 100%;
+    }
+  }
+}
+
 .benefit-block {
   display: grid;
   align-items: center;
@@ -42,5 +50,8 @@
 }
 
 .hero h1 {
-  font-size: 45px;
+  font-family: "Baloo 2 Bold";
+  @include media($mq-tablet-l) {
+    font-size: 32px;
+  }
 }

@@ -7,7 +7,10 @@
   .form-section {
     display: flex;
     flex-direction: column;
-    padding: $space-12 $space-40;
+    padding: $space-24 $space-40;
+    @include media($mq-mobile) {
+      padding: $space-40;
+    }
     position: relative;
     text-align: center;
     form {

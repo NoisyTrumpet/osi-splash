@@ -12,7 +12,6 @@ const RootIndex = ({ data }) => {
 
   const benefits = data.contentfulSplashPage.benefitsAll
   const heroImage = data.contentfulSplashPage.heroImage
-  console.log(heroImage)
   return (
     <Layout location="/">
       <SEO />
@@ -45,7 +44,7 @@ export const pageQuery = graphql`
         }
       }
       heroImage {
-        fluid(maxWidth: 800) {
+        fluid(maxWidth: 800, quality: 90) {
           ...GatsbyContentfulFluid_withWebp
         }
       }

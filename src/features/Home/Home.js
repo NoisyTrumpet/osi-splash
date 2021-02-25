@@ -21,9 +21,9 @@ import "./Home.scss"
 
 const Home = ({ missionText, visionText, heroText, benefits, heroImage }) => {
   const defaultImgSrc = {
-    imageDesktop: heroImage.fluid.src,
-    imageTablet: heroImage.fluid.src,
-    imageMobile: heroImage.fluid.src,
+    imageDesktop: heroImage.fluid.srcWebp,
+    imageTablet: heroImage.fluid.srcWebp,
+    imageMobile: heroImage.fluid.srcWebp,
   }
 
   // const defaultImgSrc = {
@@ -100,8 +100,7 @@ const Home = ({ missionText, visionText, heroText, benefits, heroImage }) => {
         imageAltText={heroText}
         presetLayout="50/50, Osi"
         headline1="Remote patient monitoring technology with a human touch"
-        bodySubtitleWidth="false"
-        bodySubtitle=""
+        bodySubtitleWidth
         wave
         waveColorBottom="primary"
       />

@@ -53,6 +53,7 @@ module.exports = {
     "gatsby-plugin-sharp",
     "optimize-css-assets-webpack-plugin",
     `gatsby-plugin-sass`,
+    `gatsby-plugin-preload-fonts`,
     {
       resolve: "gatsby-plugin-web-font-loader",
       options: {

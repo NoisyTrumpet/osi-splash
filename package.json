@@ -14,7 +14,8 @@
     "deploy": "gatsby build --prefix-paths && gh-pages -d public",
     "fix-semi": "eslint --quiet --ignore-pattern node_modules --ignore-pattern public --parser babel-eslint --no-eslintrc --rule '{\"semi\": [2, \"never\"], \"no-extra-semi\": [2]}' --fix *.js bin/*.js",
     "start": "yarn develop",
-    "heroku-postbuild": "gatsby build"
+    "heroku-postbuild": "gatsby build",
+    "preload-fonts": "gatsby-preload-fonts"
   },
   "dependencies": {
     "@contentful/rich-text-html-renderer": "^14.1.2",
@@ -28,6 +29,7 @@
     "gatsby-plugin-google-marketing-platform": "^0.1.21",
     "gatsby-plugin-google-tagmanager": "^2.11.0",
     "gatsby-plugin-guess-js": "^1.10.0",
+    "gatsby-plugin-preload-fonts": "^1.9.1",
     "gatsby-plugin-react-helmet": "^3.8.0",
     "gatsby-plugin-sass": "^2.0.11",
     "gatsby-plugin-sharp": "^2.12.2",
