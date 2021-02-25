@@ -26,6 +26,12 @@ const Home = ({ missionText, visionText, heroText, benefits, heroImage }) => {
     imageMobile: heroImage.fluid.src,
   }
 
+  // const defaultImgSrc = {
+  //   imageDesktop: "https://picsum.photos/700/600.webp",
+  //   imageTablet: "https://picsum.photos/200/300.webp",
+  //   imageMobile: "https://picsum.photos/200/300.webp",
+  // }
+
   const Bold = ({ children }) => (
     <Typography variant="body-medium" className="bold">
       {children}

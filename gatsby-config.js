@@ -33,6 +33,20 @@ module.exports = {
   pathPrefix: "/osi-splash",
   /* Your site config here */
   plugins: [
+    {
+      resolve: "gatsby-plugin-google-marketing-platform",
+      options: {
+        // dataLayer: {
+        //   gaPropertyId: '[Google Analytics ID]',
+        // },
+        tagmanager: {
+          id: "GTM-KTG3DT7",
+        },
+        // analytics: {
+        //   id: '[Google Analytics ID]'
+        // }
+      },
+    },
     "gatsby-transformer-remark",
     "gatsby-transformer-sharp",
     "gatsby-plugin-react-helmet",
