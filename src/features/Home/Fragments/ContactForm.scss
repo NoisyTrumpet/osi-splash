@@ -1,28 +1,47 @@
 @import "../../../styles/main.scss";
 
-.form-section {
-  display: grid;
-  place-items: center;
-  padding: $space-40;
-  form {
-    max-width: 1200px;
-    margin-top: $space-24;
+.form-wrapper {
+  display: block;
+  width: 100%;
+  position: relative;
+  .form-section {
+    display: flex;
+    flex-direction: column;
+    padding: $space-40;
     position: relative;
-    .two-field-wrapper {
-      display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
-      grid-template-rows: 1fr;
-      gap: 0px $space-12;
-      grid-template-areas: ". .";
+    text-align: center;
+    form {
+      margin: 0 auto;
+      max-width: 1200px;
+      margin-top: $space-24;
+      position: relative;
+      .two-field-wrapper {
+        display: grid;
+        grid-template-columns: 0.9fr 1.1fr;
+        grid-template-rows: 1fr;
+        gap: 0px $space-12;
+        grid-template-areas: ". .";
+      }
+      .typography-field-label {
+        background-color: map-get($colors, "accentA") !important;
+        padding: rem(5px) !important;
+        border-radius: rem(5px) !important;
+        color: map-get($colors, "brand-white") !important;
+      }
+      button {
+        margin-left: auto;
+      }
     }
-    .typography-field-label {
-      background-color: map-get($colors, "accentA") !important;
-      padding: rem(5px) !important;
-      border-radius: rem(5px) !important;
-      color: map-get($colors, "brand-white") !important;
-    }
-    button {
-      margin-left: auto;
+  }
+
+  .about-wave {
+    width: 100%;
+
+    .wave {
+      .wave-inlinesvg {
+        width: 100% !important;
+        max-height: $space-64;
+      }
     }
   }
 }

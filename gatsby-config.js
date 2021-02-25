@@ -40,6 +40,22 @@ module.exports = {
     "optimize-css-assets-webpack-plugin",
     `gatsby-plugin-sass`,
     {
+      resolve: "gatsby-plugin-web-font-loader",
+      options: {
+        custom: {
+          families: [
+            "Baloo 2",
+            "Baloo 2 Extra Bold",
+            "Baloo 2 Semi Bold",
+            "GT America",
+            "GT America Bold",
+            "GT America Bold-Italic",
+          ],
+          urls: ["/fonts/fonts.css"],
+        },
+      },
+    },
+    {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "SVG",
