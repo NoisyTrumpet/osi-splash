@@ -2,56 +2,82 @@
 
 .hero {
   #infographic {
+    max-height: 400px;
     @include media($mq-tablet-l) {
       max-width: 100%;
     }
   }
 }
 
+#benefits {
+  padding: $space-40 0;
+  position: relative;
+}
+
 .benefit-block {
   display: grid;
   align-items: center;
 
-  @media (min-width: 767px) {
-    margin-top: 30px;
-    margin-bottom: 15px;
-  }
+  // @media (min-width: 767px) {
+  //   margin-top: 30px;
+  //   margin-bottom: 15px;
+  // }
 
   .icon {
-    max-width: 120px;
+    max-width: rem(130px);
     margin: 0 auto;
     display: block;
     width: fit-content;
+  }
+  span {
+    p:nth-child(2) {
+      margin-top: $space-24;
+    }
+    p:nth-child(3) {
+      margin-top: $space-24;
+    }
   }
 
   &:nth-child(odd) {
     background-color: #ffa500;
   }
 
-  &:first-child {
-    @media (max-width: 767px) {
-      margin-top: 30px;
-    }
+  &:last-child {
+    padding-top: rem(90px);
   }
 
-  &:last-child {
-    @media (max-width: 767px) {
-      margin-bottom: 15px;
-    }
-  }
   &:nth-child(even) {
     background-color: #00adbc;
+    padding-top: rem(90px);
+    @media (max-width: 380px) {
+      .typography-headline {
+        font-size: $space-24;
+      }
+    }
   }
   padding: 30px;
 }
 
 #about {
-  padding: $space-40 0;
+  padding: $space-64 0;
 }
 
 .hero h1 {
   font-family: "Baloo 2 Bold";
   @include media($mq-tablet-l) {
     font-size: 32px;
+  }
+}
+
+.wrapper-vision-mission {
+  .typography-headline-3 {
+    margin-top: $space-24;
+  }
+}
+
+.wrapper-about {
+  .typography-body {
+    display: block;
+    margin-top: $space-24 !important;
   }
 }

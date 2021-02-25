@@ -117,9 +117,7 @@ const Home = ({ missionText, visionText, heroText, benefits, heroImage }) => {
               with doctors and their clinical team to provide a more
               personalized healthcare experience for their patients.
             </Typography>
-            <br />
-            <br />
-            <Typography variant="body-medium">
+            <Typography variant="body-medium" addClass="body-p">
               {" "}
               Our diverse team of experienced and certified care managers works
               closely with healthcare providers to offer remote patient
@@ -127,9 +125,7 @@ const Home = ({ missionText, visionText, heroText, benefits, heroImage }) => {
               sensors, routine phone call check-ins and summary reporting of
               patient information and trends.
             </Typography>
-            <br />
-            <br />
-            <Typography variant="body-medium">
+            <Typography variant="body-medium" addClass="body-p">
               OsiLIFE Care Managers are the ‘Patient Care Partners’ you can
               depend on to collectively address the challenges of managing large
               patient populations, while driving value up and cost down for
@@ -137,15 +133,15 @@ const Home = ({ missionText, visionText, heroText, benefits, heroImage }) => {
             </Typography>
           </Wrapper>
           <Wrapper addClass="vision-mission">
-            <Typography variant="headline-4">Our Vision...</Typography>
+            <Typography variant="headline-3">Our Vision...</Typography>
             <Typography variant="body-medium">{visionText}</Typography>
-            <Typography variant="headline-4">Our Mission...</Typography>
+            <Typography variant="headline-3">Our Mission...</Typography>
             <Typography variant="body-medium">{missionText}</Typography>
           </Wrapper>
         </Grid>
       </div>
       <div id="benefits">
-        <Grid grid={3} landscape={3} portrait={1} mobile={1} gap={0}>
+        <Grid grid={3} landscape={1} portrait={1} mobile={1} gap={0}>
           <Benefits />
         </Grid>
       </div>
