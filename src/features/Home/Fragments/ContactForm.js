@@ -1,6 +1,6 @@
 import React from "react"
 import { Formik, Form } from "formik"
-import { Typography, TextField, Button, Wave } from "@noisytrumpet/osi-dls"
+import { Typography, TextField, Button } from "@noisytrumpet/osi-dls"
 import "./ContactForm.scss"
 
 const ContactForm = ({ title, subtitle }) => {
@@ -53,9 +53,6 @@ const ContactForm = ({ title, subtitle }) => {
           </Form>
         </Formik>
       </section>
-      {/* <div className="about-wave">
-        <Wave colorTop="primary" colorBottom="brand-white" />
-      </div> */}
     </div>
   )
 }
