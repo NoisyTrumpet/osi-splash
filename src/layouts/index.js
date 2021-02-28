@@ -1,5 +1,6 @@
 import React from "react"
 import { Nav } from "@noisytrumpet/osi-dls"
+import "../../static/fonts/fonts.css"
 import "../../static/fonts/icons/icomoon/style.css"
 
 const Layout = ({ location, children }) => {
