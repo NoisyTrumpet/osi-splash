@@ -48,3 +48,7 @@
     }
   }
 }
+
+.icon-24:before {
+  color: map-get($colors, "brand-white") !important;
+}
