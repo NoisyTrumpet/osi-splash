@@ -9,8 +9,6 @@ const PrivacyPage = ({ privacy }) => {
   const Bold = ({ children }) => (
     <Typography variant="headline-5">{children}</Typography>
   )
-
-  console.log(privacy)
   const Text = ({ children }) => (
     <Typography variant="body-medium">{children}</Typography>
   )
