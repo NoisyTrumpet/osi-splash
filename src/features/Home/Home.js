@@ -89,39 +89,42 @@ const Home = ({ missionText, visionText, heroText, benefits, heroImage }) => {
   }
   return (
     <>
-      <Hero
-        image={heroImage}
-        imageAlt="Remote patient monitoring technology with a human touch"
-        info={info}
-      />
-      {notDesktop && (
-        <div className="cta-block">
-          <Button
-            mode="secondary"
-            click={() => {
-              scrollTo("#form")
-            }}
-          >
-            Contact
-          </Button>
-        </div>
-      )}
+      <>
+        <Hero
+          image={heroImage}
+          imageAlt="Remote patient monitoring technology with a human touch"
+          info={info}
+        />
+      </>
       <div id="benefits">
+        {notDesktop && (
+          <div className="cta-block">
+            <Button
+              mode="secondary"
+              click={() => {
+                scrollTo("#form")
+              }}
+            >
+              Contact
+            </Button>
+          </div>
+        )}
         <Grid grid={3} landscape={1} portrait={1} mobile={1} gap={0}>
           <Benefits />
         </Grid>
       </div>
-      {!isDesktop && (
-        <div>
-          <GatsbyImage
-            image={getImage(heroImage)}
-            alt="OsiLIFE"
-            layout="fluid"
-            placeholder="blurred"
-          />
-        </div>
-      )}
+
       <div id="about">
+        {!isDesktop && (
+          <div>
+            <GatsbyImage
+              image={getImage(heroImage)}
+              alt="OsiLIFE"
+              layout="constrained"
+              placeholder="blurred"
+            />
+          </div>
+        )}
         <Grid grid={2} landscape={2} portrait={2} mobile={1} gap={16}>
           <Wrapper addClass="about" id="about">
             <Typography variant="headline-2">About</Typography>

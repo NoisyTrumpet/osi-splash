@@ -32,7 +32,7 @@ const Hero = ({ image, imageAlt, info }) => {
           <div>
             <GatsbyImage
               image={getImage(image)}
-              layout="fluid"
+              layout="constrained"
               alt={imageAlt}
             />
           </div>
