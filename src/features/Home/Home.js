@@ -23,8 +23,6 @@ import Hero from "./Fragments/Hero"
 import "./Home.scss"
 
 const Home = ({ missionText, visionText, heroText, benefits, heroImage }) => {
-  console.log(heroImage)
-
   const images = heroImage.gatsbyImageData.images.sources[0].srcSet
 
   // const desktop = images.split(" 350w,")[1].split(" 947w")[0]
@@ -43,6 +41,8 @@ const Home = ({ missionText, visionText, heroText, benefits, heroImage }) => {
   //   imageMobile: "https://picsum.photos/200/300.webp",
   // }
 
+  console.log(benefits)
+
   const Bold = ({ children }) => (
     <Typography variant="body-medium" className="bold">
       {children}
@@ -58,6 +58,7 @@ const Home = ({ missionText, visionText, heroText, benefits, heroImage }) => {
     },
     renderNode: {
       [BLOCKS.text]: (node, children) => <Text>{children}</Text>,
+      [BLOCKS.list_item]: (node, children) => <Text>{children}</Text>,
       [BLOCKS.EMBEDDED_ASSET]: node => {
         return (
           <>

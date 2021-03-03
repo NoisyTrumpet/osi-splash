@@ -24,7 +24,7 @@ const Hero = ({ image, imageAlt, info }) => {
         </Typography>
         {isDesktop && <InlineSVG className="infograph" src={info} />}
       </div>
-      <div className="images-container">
+      <section className="mages">
         {!isMobile && !isDesktop && (
           <InlineSVG className="infograph" src={info} />
         )}
@@ -38,7 +38,7 @@ const Hero = ({ image, imageAlt, info }) => {
           </div>
         )}
         {isMobile && <InlineSVG className="infograph" src={info} />}
-      </div>
+      </section>
     </section>
   )
 }

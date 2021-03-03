@@ -7,6 +7,36 @@
   gap: 0px 0px;
   grid-template-areas: ". .";
   position: relative;
+
+  .mages {
+    @include media($mq-tablet-l) {
+      display: grid !important;
+      grid-template-columns: 1fr 1fr !important;
+      grid-template-rows: 1fr !important;
+      gap: 0px 0px !important;
+      grid-template-areas: ". ." !important;
+    }
+    .infograph {
+      max-width: 100% !important;
+      margin: $space-64 auto 0 auto;
+      @include media($mq-tablet-l) {
+        margin: $space-12 auto 0 auto !important;
+      }
+    }
+    @include media($mq-mobile) {
+      display: block !important;
+    }
+
+    .gatsby-image-wrapper {
+      max-height: rem(1059px) !important;
+      align-items: flex-end;
+      // max-height: 100% !important;
+      // img {
+      //   object-fit: contain !important;
+      // }
+    }
+  }
+
   @include media($mq-tablet-l) {
     display: grid;
     grid-template-columns: 1fr;
@@ -37,32 +67,6 @@
     .infograph {
       max-width: 100%;
       margin: $space-64 auto 0 auto;
-    }
-  }
-
-  .images-container {
-    @include media($mq-tablet-range) {
-      display: grid !important;
-      grid-template-columns: 1fr 1fr !important;
-      grid-template-rows: 1fr !important;
-      gap: 0px 0px !important;
-      grid-template-areas: ". ." !important;
-    }
-    .infograph {
-      max-width: 100% !important;
-      margin: $space-64 auto 0 auto;
-      @include media($mq-tablet-l) {
-        margin: $space-12 auto 0 auto !important;
-      }
-    }
-
-    .gatsby-image-wrapper {
-      max-height: rem(1059px) !important;
-      align-items: flex-end;
-      // max-height: 100% !important;
-      // img {
-      //   object-fit: contain !important;
-      // }
     }
   }
 }

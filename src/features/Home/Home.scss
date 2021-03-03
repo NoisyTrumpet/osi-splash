@@ -45,6 +45,13 @@
   display: grid;
   align-items: center;
 
+  ul {
+    padding-left: $space-16;
+    li {
+      list-style-type: disc;
+    }
+  }
+
   // @media (min-width: 767px) {
   //   margin-top: 30px;
   //   margin-bottom: 15px;
@@ -74,7 +81,7 @@
 
   &:last-child {
     @include media($mq-tablet-up) {
-      padding-top: rem(90px);
+      padding-top: rem(60px);
       padding-right: $space-64;
     }
   }
@@ -82,7 +89,7 @@
   &:nth-child(even) {
     background-color: #00adbc;
     @include media($mq-tablet-up) {
-      padding-top: rem(70px);
+      padding-top: rem(10px);
     }
     @media (max-width: 380px) {
       .typography-headline {
