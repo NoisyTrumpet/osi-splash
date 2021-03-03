@@ -1,9 +1,11 @@
 import React from "react"
+import { useMediaQuery } from "react-responsive"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { Typography, InlineSVG } from "@noisytrumpet/osi-dls"
-import { useMediaQuery } from "react-responsive"
 
+// Styles
 import "./Hero.scss"
+
 const Hero = ({ image, imageAlt, info }) => {
   const isDesktop = useMediaQuery({
     query: "(min-width: 1024px)",
@@ -22,7 +24,7 @@ const Hero = ({ image, imageAlt, info }) => {
         </Typography>
         {isDesktop && <InlineSVG className="infograph" src={info} />}
       </div>
-      <div className="images-wrapper">
+      <div className="images-container">
         {!isMobile && !isDesktop && (
           <InlineSVG className="infograph" src={info} />
         )}

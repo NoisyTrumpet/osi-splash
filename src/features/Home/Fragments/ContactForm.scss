@@ -9,11 +9,11 @@
     flex-direction: column;
     padding-top: $space-24;
     margin-left: $space-40;
-    border-top-left-radius: $space-40;
-    border-top-right-radius: $space-40;
+    border-top-left-radius: $space-64;
+    border-top-right-radius: $space-64;
     @include media($mq-mobile) {
-      margin-left: $space-16 !important;
-      margin-right: $space-16 !important;
+      margin-left: 0px !important;
+      margin-right: 0px !important;
     }
     margin-right: $space-40 !important;
     @include media($mq-mobile) {

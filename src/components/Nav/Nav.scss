@@ -18,6 +18,15 @@
       }
     }
   }
+  @media (max-width: 375px) {
+    .nav-logo-wrapper {
+      a {
+        #logo_horiz_tagline {
+          max-width: 200px;
+        }
+      }
+    }
+  }
 
   .btn-secondary {
     max-width: fit-content;

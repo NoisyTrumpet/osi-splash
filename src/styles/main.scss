@@ -19,8 +19,8 @@
 
 .footer {
   @include media($mq-mobile) {
-    margin-left: $space-16 !important;
-    margin-right: $space-16 !important;
+    margin-left: 0px !important;
+    margin-right: 0px !important;
   }
   padding: $space-24 !important;
   margin-right: $space-40 !important;

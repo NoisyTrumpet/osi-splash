@@ -10,7 +10,7 @@
   @include media($mq-tablet-l) {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: min-content min-content;
+    grid-template-rows: min-content min-content !important;
     gap: 0px 0px;
     grid-template-areas:
       "."
@@ -28,7 +28,7 @@
     .hero-title {
       max-width: 85%;
       line-height: 70px;
-      @include media($mq-tablet-l) {
+      @media (max-width: 1427px) {
         font-size: 40px;
         line-height: 40px;
       }
@@ -40,28 +40,29 @@
     }
   }
 
-  .images-wrapper {
+  .images-container {
     @include media($mq-tablet-range) {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: 1fr;
-      gap: 0px 0px;
-      grid-template-areas: ". .";
+      display: grid !important;
+      grid-template-columns: 1fr 1fr !important;
+      grid-template-rows: 1fr !important;
+      gap: 0px 0px !important;
+      grid-template-areas: ". ." !important;
     }
     .infograph {
-      max-width: 100%;
+      max-width: 100% !important;
       margin: $space-64 auto 0 auto;
       @include media($mq-tablet-l) {
         margin: $space-12 auto 0 auto !important;
       }
     }
-  }
-  .gatsby-image-wrapper {
-    max-height: rem(1059px) !important;
-    align-items: flex-end;
-    // max-height: 100% !important;
-    // img {
-    //   object-fit: contain !important;
-    // }
+
+    .gatsby-image-wrapper {
+      max-height: rem(1059px) !important;
+      align-items: flex-end;
+      // max-height: 100% !important;
+      // img {
+      //   object-fit: contain !important;
+      // }
+    }
   }
 }
