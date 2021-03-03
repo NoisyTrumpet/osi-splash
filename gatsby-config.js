@@ -54,7 +54,6 @@ module.exports = {
     "gatsby-plugin-image",
     `gatsby-plugin-sass`,
     `gatsby-plugin-preload-fonts`,
-    `gatsby-plugin-minify`,
     {
       resolve: `gatsby-transformer-remark`,
       options: {
