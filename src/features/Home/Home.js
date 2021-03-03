@@ -117,14 +117,17 @@ const Home = ({ missionText, visionText, heroText, benefits, heroImage }) => {
         title="Learn More"
         subtitle="Share information below to stay up to date with the latest at OsiLIFE."
       />
-      {!isDesktop && (
-        <GatsbyImage
-          image={getImage(heroImage)}
-          alt="OsiLIFE"
-          placeholder="blurred"
-        />
-      )}
+
       <div id="about">
+        <div className="image-wrapper-test">
+          {!isDesktop && (
+            <GatsbyImage
+              image={getImage(heroImage)}
+              alt="OsiLIFE"
+              placeholder="blurred"
+            />
+          )}
+        </div>
         <Grid grid={2} landscape={2} portrait={2} mobile={1} gap={16}>
           <Wrapper addClass="about" id="about">
             <Typography variant="headline-2">About</Typography>
