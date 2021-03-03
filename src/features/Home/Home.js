@@ -9,7 +9,6 @@ import {
   Typography,
   Grid,
   Wrapper,
-  Hero,
   InlineSVG,
   Footer,
 } from "@noisytrumpet/osi-dls"
@@ -20,6 +19,7 @@ import remote from "../../../static/svg/remote.svg"
 import patient from "../../../static/svg/patient.svg"
 import info from "../../../static/svg/info.svg"
 import ContactForm from "./Fragments/ContactForm"
+import Hero from "./Fragments/Hero"
 import "./Home.scss"
 
 const Home = ({ missionText, visionText, heroText, benefits, heroImage }) => {
@@ -27,13 +27,13 @@ const Home = ({ missionText, visionText, heroText, benefits, heroImage }) => {
 
   const images = heroImage.gatsbyImageData.images.sources[0].srcSet
 
-  const desktop = images.split(" 350w,")[1].split(" 700w")[0]
+  // const desktop = images.split(" 350w,")[1].split(" 947w")[0]
 
-  const defaultImgSrc = {
-    imageDesktop: desktop,
-    imageTablet: desktop,
-    imageMobile: desktop,
-  }
+  // const defaultImgSrc = {
+  //   imageDesktop: desktop,
+  //   imageTablet: desktop,
+  //   imageMobile: desktop,
+  // }
 
   const isDesktop = useMediaQuery({ query: "(min-width: 767px)" })
 
@@ -104,7 +104,7 @@ const Home = ({ missionText, visionText, heroText, benefits, heroImage }) => {
   }
   return (
     <>
-      <Hero
+      {/* <Hero
         image={defaultImgSrc}
         heroSVG={info}
         headlineFontStyle="h1"
@@ -112,11 +112,17 @@ const Home = ({ missionText, visionText, heroText, benefits, heroImage }) => {
         presetLayout="50/50, Osi"
         headline1="Remote patient monitoring technology with a human touch"
         bodySubtitleWidth
+      /> */}
+      <Hero
+        image={heroImage}
+        imageAlt="Remote patient monitoring technology with a human touch"
+        info={info}
       />
-      <ContactForm
-        title="Learn More"
-        subtitle="Share information below to stay up to date with the latest at OsiLIFE."
-      />
+      <div id="benefits">
+        <Grid grid={3} landscape={1} portrait={1} mobile={1} gap={0}>
+          <Benefits />
+        </Grid>
+      </div>
 
       <div id="about">
         <div className="image-wrapper-test">
@@ -159,11 +165,11 @@ const Home = ({ missionText, visionText, heroText, benefits, heroImage }) => {
           </Wrapper>
         </Grid>
       </div>
-      <div id="benefits">
-        <Grid grid={3} landscape={1} portrait={1} mobile={1} gap={0}>
-          <Benefits />
-        </Grid>
-      </div>
+
+      <ContactForm
+        title="Learn More"
+        subtitle="Share information below to stay up to date with the latest at OsiLIFE."
+      />
 
       <Footer />
     </>

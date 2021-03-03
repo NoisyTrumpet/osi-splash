@@ -7,9 +7,17 @@
   .form-section {
     display: flex;
     flex-direction: column;
-    padding: $space-40;
+    padding-top: $space-24;
+    margin-left: $space-40;
+    border-top-left-radius: $space-40;
+    border-top-right-radius: $space-40;
     @include media($mq-mobile) {
-      padding: $space-40 $space-16;
+      margin-left: $space-16 !important;
+      margin-right: $space-16 !important;
+    }
+    margin-right: $space-40 !important;
+    @include media($mq-mobile) {
+      padding: $space-24 $space-12;
     }
     position: relative;
     text-align: center;

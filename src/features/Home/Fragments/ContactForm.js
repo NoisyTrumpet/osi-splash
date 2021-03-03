@@ -33,7 +33,7 @@ const ContactForm = ({ title, subtitle }) => {
     const { isOpen, close } = React.useContext(FormDialogContext)
     return (
       <Dialog
-        accentIcon="achievement-bold"
+        accentIcon="check-default-bold"
         accentIconColor="brand-white"
         type="feature-modal"
         hasGrayBackground
@@ -90,7 +90,7 @@ const ContactForm = ({ title, subtitle }) => {
   }
   return (
     <TriggerableDialog>
-      <div className="form-wrapper">
+      <div className="form-wrapper" id="form">
         <section className="form-section background-color-primary">
           <Typography variant="headline-2" color="brand-white">
             {title}
@@ -109,12 +109,16 @@ const ContactForm = ({ title, subtitle }) => {
               name: Yup.string()
                 .min(2, "Please enter your first name")
                 .max(40, "Must be 40 characters or less")
-                .required("Please enter your name"),
+                .required("Please enter your name")
+                .nullable(),
               email: Yup.string()
                 .max(50)
                 .email("Please enter a valid email address.")
-                .required("Please enter a valid email address."),
-              phone: Yup.string().required("Please enter a phone number"),
+                .required("Please enter a valid email address.")
+                .nullable(),
+              phone: Yup.string()
+                .required("Please enter a phone number")
+                .nullable(),
             })}
             onSubmit={handleOnSubmit}
           >

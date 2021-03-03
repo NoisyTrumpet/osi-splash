@@ -1,6 +1,8 @@
 import React from "react"
 import { Link } from "gatsby"
-import { InlineSVG } from "@noisytrumpet/osi-dls"
+import { InlineSVG, Button } from "@noisytrumpet/osi-dls"
+import scrollTo from "gatsby-plugin-smoothscroll"
+
 import logo from "../../../static/svg/logo.svg"
 import "./Nav.scss"
 
@@ -12,24 +14,14 @@ const Nav = () => {
           <InlineSVG src={logo} />
         </Link>
       </div>
-      <ul className="navigation-menu">
-        <li className="navigation-item">
-          <Link
-            to="#about"
-            className="typography typography-cta-tertiary color-brand-blue typography typography-cta-tertiary color-brand-blue-tertiary"
-          >
-            About
-          </Link>
-        </li>
-        <li className="navigation-item">
-          <Link
-            to="#benefits"
-            className="typography typography-cta-tertiary color-brand-blue typography typography-cta-tertiary color-brand-blue-tertiary"
-          >
-            Benefits
-          </Link>
-        </li>
-      </ul>
+      <Button
+        mode="secondary"
+        click={() => {
+          scrollTo("#form")
+        }}
+      >
+        Contact
+      </Button>
     </nav>
   )
 }
