@@ -4,6 +4,20 @@
   #infographic {
     max-width: 100%;
     width: 600px;
+    margin-bottom: 0px;
+  }
+  .content {
+    @include media($mq-tablet-l) {
+      padding: 0 $space-12 !important;
+    }
+  }
+
+  h1:last-of-type {
+    margin-bottom: $space-12 !important;
+  }
+
+  .typoWrapper {
+    margin-bottom: 0px;
   }
 }
 
@@ -58,7 +72,11 @@
 }
 
 #about {
-  padding: $space-64 0;
+  padding: $space-40 0;
+
+  .gatsby-image-wrapper {
+    width: 100%;
+  }
 }
 
 .hero h1 {

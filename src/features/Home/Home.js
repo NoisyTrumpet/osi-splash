@@ -1,7 +1,10 @@
 import React from "react"
 import { BLOCKS, MARKS } from "@contentful/rich-text-types"
 import { renderRichText } from "gatsby-source-contentful/rich-text"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
+
 // DLS
+import { useMediaQuery } from "react-responsive"
 import {
   Typography,
   Grid,
@@ -20,11 +23,21 @@ import ContactForm from "./Fragments/ContactForm"
 import "./Home.scss"
 
 const Home = ({ missionText, visionText, heroText, benefits, heroImage }) => {
+  console.log(heroImage)
+
+  const images = heroImage.gatsbyImageData.images.sources[0].srcSet
+
+  const desktop = images.split(" 350w,")[1].split(" 700w")[0]
+
+  const image = getImage(heroImage)
+
   const defaultImgSrc = {
-    imageDesktop: heroImage.fluid.srcWebp,
-    imageTablet: heroImage.fluid.srcWebp,
-    imageMobile: heroImage.fluid.srcWebp,
+    imageDesktop: desktop,
+    imageTablet: desktop,
+    imageMobile: desktop,
   }
+
+  const isDesktop = useMediaQuery({ query: "(min-width: 767px)" })
 
   // const defaultImgSrc = {
   //   imageDesktop: "https://picsum.photos/700/600.webp",
@@ -104,9 +117,12 @@ const Home = ({ missionText, visionText, heroText, benefits, heroImage }) => {
       />
       <ContactForm
         title="Learn More"
-        subtitle="Share information below to stay up to date with the latest at OsiLIFE"
+        subtitle="Share information below to stay up to date with the latest at OsiLIFE."
       />
       <div id="about">
+        {!isDesktop && (
+          <GatsbyImage image={image} alt="OsiLIFE" placeholder="blurred" />
+        )}
         <Grid grid={2} landscape={2} portrait={2} mobile={1} gap={16}>
           <Wrapper addClass="about" id="about">
             <Typography variant="headline-2">About</Typography>

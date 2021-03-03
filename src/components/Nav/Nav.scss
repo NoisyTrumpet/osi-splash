@@ -1,0 +1,13 @@
+@import "../../styles/main.scss";
+
+.navigation {
+  display: flex;
+  align-items: center;
+  max-height: fit-content;
+  .navigation-menu {
+    display: flex;
+    .navigation-item {
+      margin-right: $space-16;
+    }
+  }
+}

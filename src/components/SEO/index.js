@@ -2,6 +2,9 @@ import React from "react"
 import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { StaticQuery, graphql } from "gatsby"
+import FontUrl1 from "../../../static/fonts/Baloo-2/fonts/Baloo2-Medium.woff2"
+// import "../../../static/fonts/GTAmerica/css/styles.css"
+// import "../../../static/fonts/icons/icomoon/style.css"
 
 const SEO = ({
   title,
@@ -71,6 +74,13 @@ const SEO = ({
             <meta
               name="viewport"
               content="width=device-width, initial-scale=1, maximum-scale=1"
+            />
+            <link
+              rel="preload"
+              as="font"
+              href={FontUrl1}
+              type="font/woff2"
+              crossOrigin="anonymous"
             />
             <html lang="en" />
           </Helmet>

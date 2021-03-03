@@ -43,9 +43,7 @@ export const pageQuery = graphql`
         }
       }
       heroImage {
-        fluid(maxWidth: 800, quality: 90) {
-          ...GatsbyContentfulFluid_withWebp
-        }
+        gatsbyImageData(width: 700, placeholder: BLURRED, formats: [AUTO, WEBP])
       }
       benefitsAll {
         title
