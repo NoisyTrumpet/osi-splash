@@ -113,15 +113,16 @@ const Home = ({ missionText, visionText, heroText, benefits, heroImage }) => {
       </div>
 
       <div id="about">
-        <div className="image-wrapper-test">
-          {!isDesktop && (
+        {!isDesktop && (
+          <div className="image-wrapper-test">
             <GatsbyImage
               image={getImage(heroImage)}
               alt="OsiLIFE"
               placeholder="blurred"
             />
-          )}
-        </div>
+          </div>
+        )}
+
         <Grid grid={2} landscape={2} portrait={2} mobile={1} gap={16}>
           <Wrapper addClass="about" id="about">
             <Typography variant="headline-2">About</Typography>
