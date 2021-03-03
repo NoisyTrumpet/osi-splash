@@ -29,8 +29,6 @@ const Home = ({ missionText, visionText, heroText, benefits, heroImage }) => {
 
   const desktop = images.split(" 350w,")[1].split(" 700w")[0]
 
-  const image = getImage(heroImage)
-
   const defaultImgSrc = {
     imageDesktop: desktop,
     imageTablet: desktop,
@@ -119,10 +117,14 @@ const Home = ({ missionText, visionText, heroText, benefits, heroImage }) => {
         title="Learn More"
         subtitle="Share information below to stay up to date with the latest at OsiLIFE."
       />
+      {!isDesktop && (
+        <GatsbyImage
+          image={getImage(heroImage)}
+          alt="OsiLIFE"
+          placeholder="blurred"
+        />
+      )}
       <div id="about">
-        {!isDesktop && (
-          <GatsbyImage image={image} alt="OsiLIFE" placeholder="blurred" />
-        )}
         <Grid grid={2} landscape={2} portrait={2} mobile={1} gap={16}>
           <Wrapper addClass="about" id="about">
             <Typography variant="headline-2">About</Typography>

@@ -1,12 +1,12 @@
 import React from "react"
 import { Link } from "gatsby"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image";
 
 // import styles from './article-preview.module.css'
 
 export default ({ article }) => (
   <div>
-    <Img alt="" fluid={article.heroImage.fluid} />
+    <GatsbyImage image={article.childImageSharp.gatsbyImageData} alt="" />
     <h3>
       <Link to={`/blog/${article.slug}`}>{article.title}</Link>
     </h3>

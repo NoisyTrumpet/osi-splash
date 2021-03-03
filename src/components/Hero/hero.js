@@ -1,9 +1,9 @@
 import React from "react"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image";
 
 export default ({ data }) => (
   <div>
-    <Img alt={data.name} fluid={data.heroImage.fluid} />
+    <GatsbyImage image={data.childImageSharp.gatsbyImageData} alt={data.name} />
     <div>
       <h3>{data.name}</h3>
       <p>{data.title}</p>
