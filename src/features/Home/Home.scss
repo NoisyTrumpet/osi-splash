@@ -120,6 +120,11 @@
 
 .wrapper-vision-mission {
   .typography-headline-3 {
+    @include media($mq-desktop) {
+      &:first-of-type {
+        margin-top: rem(70px);
+      }
+    }
     margin-top: $space-24;
   }
 }
@@ -128,5 +133,14 @@
   .typography-body {
     display: block;
     margin-top: $space-24 !important;
+  }
+}
+
+.cta-block {
+  display: grid;
+  place-items: center;
+  margin-bottom: $space-24;
+  button {
+    width: 75% !important;
   }
 }

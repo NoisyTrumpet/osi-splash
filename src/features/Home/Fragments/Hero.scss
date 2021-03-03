@@ -9,7 +9,7 @@
   position: relative;
 
   .mages {
-    @include media($mq-tablet-l) {
+    @media (max-width: 1025px) {
       display: grid !important;
       grid-template-columns: 1fr 1fr !important;
       grid-template-rows: 1fr !important;

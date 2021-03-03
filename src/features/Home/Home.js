@@ -2,7 +2,7 @@ import React from "react"
 import { BLOCKS, MARKS } from "@contentful/rich-text-types"
 import { renderRichText } from "gatsby-source-contentful/rich-text"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-
+import scrollTo from "gatsby-plugin-smoothscroll"
 // DLS
 import { useMediaQuery } from "react-responsive"
 import {
@@ -11,6 +11,7 @@ import {
   Wrapper,
   InlineSVG,
   Footer,
+  Button,
 } from "@noisytrumpet/osi-dls"
 
 // SVGs
@@ -23,25 +24,8 @@ import Hero from "./Fragments/Hero"
 import "./Home.scss"
 
 const Home = ({ missionText, visionText, heroText, benefits, heroImage }) => {
-  const images = heroImage.gatsbyImageData.images.sources[0].srcSet
-
-  // const desktop = images.split(" 350w,")[1].split(" 947w")[0]
-
-  // const defaultImgSrc = {
-  //   imageDesktop: desktop,
-  //   imageTablet: desktop,
-  //   imageMobile: desktop,
-  // }
-
   const isDesktop = useMediaQuery({ query: "(min-width: 767px)" })
-
-  // const defaultImgSrc = {
-  //   imageDesktop: "https://picsum.photos/700/600.webp",
-  //   imageTablet: "https://picsum.photos/200/300.webp",
-  //   imageMobile: "https://picsum.photos/200/300.webp",
-  // }
-
-  console.log(benefits)
+  const notDesktop = useMediaQuery({ query: "(max-width: 766px)" })
 
   const Bold = ({ children }) => (
     <Typography variant="body-medium" className="bold">
@@ -105,20 +89,23 @@ const Home = ({ missionText, visionText, heroText, benefits, heroImage }) => {
   }
   return (
     <>
-      {/* <Hero
-        image={defaultImgSrc}
-        heroSVG={info}
-        headlineFontStyle="h1"
-        imageAltText={heroText}
-        presetLayout="50/50, Osi"
-        headline1="Remote patient monitoring technology with a human touch"
-        bodySubtitleWidth
-      /> */}
       <Hero
         image={heroImage}
         imageAlt="Remote patient monitoring technology with a human touch"
         info={info}
       />
+      {notDesktop && (
+        <div className="cta-block">
+          <Button
+            mode="secondary"
+            click={() => {
+              scrollTo("#form")
+            }}
+          >
+            Contact
+          </Button>
+        </div>
+      )}
       <div id="benefits">
         <Grid grid={3} landscape={1} portrait={1} mobile={1} gap={0}>
           <Benefits />
@@ -169,7 +156,7 @@ const Home = ({ missionText, visionText, heroText, benefits, heroImage }) => {
 
       <ContactForm
         title="Learn More"
-        subtitle="Share information below to stay up to date with the latest at OsiLIFE."
+        subtitle="Share your information below to stay up to date with the latest at OsiLIFE."
       />
 
       <Footer />
