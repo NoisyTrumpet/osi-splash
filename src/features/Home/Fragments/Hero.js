@@ -8,7 +8,7 @@ import "./Hero.scss"
 
 const Hero = ({ image, imageAlt, info }) => {
   const isDesktop = useMediaQuery({
-    query: "(min-width: 1024px)",
+    query: "(min-width: 1025px)",
   })
   const isMobile = useMediaQuery({
     query: "(max-width: 767px)",
