@@ -16,6 +16,18 @@
     margin-bottom: $space-12 !important;
   }
 
+  h1 {
+    font-family: "Baloo 2" !important;
+    @include media($mq-tablet-up) {
+      font-size: 70px;
+    }
+    @include media($mq-mobile) {
+      font-size: 50px !important;
+      line-height: 50px !important;
+      padding: 0 $space-40 !important;
+    }
+  }
+
   .typoWrapper {
     margin-bottom: 0px;
   }
@@ -73,6 +85,9 @@
 
 #about {
   padding: $space-40 0;
+  @include media($mq-tablet-up) {
+    padding: $space-40 rem(100px);
+  }
 }
 
 .gatsby-image-wrapper {

@@ -8,6 +8,9 @@
     display: flex;
     .navigation-item {
       margin-right: $space-16;
+      a {
+        text-decoration: none !important;
+      }
     }
   }
 }

@@ -92,7 +92,7 @@ const ContactForm = ({ title, subtitle }) => {
     <TriggerableDialog>
       <div className="form-wrapper">
         <section className="form-section background-color-primary">
-          <Typography variant="headline-3" color="brand-white">
+          <Typography variant="headline-2" color="brand-white">
             {title}
           </Typography>
           <Typography variant="body-medium" color="brand-white">

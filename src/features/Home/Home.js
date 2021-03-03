@@ -77,7 +77,7 @@ const Home = ({ missionText, visionText, heroText, benefits, heroImage }) => {
       benefits.map(benefit => (
         <div className={`benefit-block`} key={benefit.title}>
           {benefit.title === "Clinic Operations" && (
-            <Typography variant="headline-3" color="brand-white">
+            <Typography variant="headline-2" color="brand-white">
               Benefits
             </Typography>
           )}
