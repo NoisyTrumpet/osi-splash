@@ -100,7 +100,7 @@
   padding: 30px;
 }
 
-#about {
+#about > div {
   @include media($mq-tablet-up) {
     &:first-child {
       display: grid;
@@ -110,6 +110,9 @@
       grid-template-areas: ". .";
     }
   }
+}
+
+#about {
   padding: $space-40 0;
   @include media($mq-tablet-up) {
     padding: $space-40 rem(100px);
