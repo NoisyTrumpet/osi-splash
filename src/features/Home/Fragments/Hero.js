@@ -1,6 +1,7 @@
 import React from "react"
+import Img from "gatsby-image"
 import { useMediaQuery } from "react-responsive"
-import { Typography, InlineSVG, Image } from "@noisytrumpet/osi-dls"
+import { Typography, InlineSVG } from "@noisytrumpet/osi-dls"
 
 // Styles
 import "./Hero.scss"
@@ -16,9 +17,6 @@ const Hero = ({ image, imageAlt, info }) => {
     query: "(min-width: 766px)",
   })
 
-  const tablet = image.fluid.srcWebp
-  const desktop = image.fluid.srcWebp
-
   return (
     <section className="hero-new">
       <div className="content">
@@ -32,11 +30,7 @@ const Hero = ({ image, imageAlt, info }) => {
           <InlineSVG className="infograph" src={info} />
         )}
         {notMobile && (
-          <div>
-            <Image src={desktop} alt={imageAlt} lazyLoad={false}>
-              <Image.Source media="(max-width:1024px)" srcSet={tablet} />
-            </Image>
-          </div>
+          <Img fluid={image.fluid} objectFit="cover" alt={imageAlt} />
         )}
         {isMobile && <InlineSVG className="infograph" src={info} />}
       </section>

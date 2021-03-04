@@ -1,5 +1,6 @@
 import React from "react"
 import { BLOCKS, MARKS } from "@contentful/rich-text-types"
+import Img from "gatsby-image"
 import { renderRichText } from "gatsby-source-contentful/rich-text"
 import scrollTo from "gatsby-plugin-smoothscroll"
 // DLS
@@ -11,7 +12,6 @@ import {
   InlineSVG,
   Footer,
   Button,
-  Image,
 } from "@noisytrumpet/osi-dls"
 
 // SVGs
@@ -26,9 +26,6 @@ import "./Home.scss"
 const Home = ({ missionText, visionText, heroText, benefits, heroImage }) => {
   const isDesktop = useMediaQuery({ query: "(min-width: 767px)" })
   const notDesktop = useMediaQuery({ query: "(max-width: 766px)" })
-
-  const tablet = heroImage.srcWebp
-  const desktop = heroImage.srcWebp
 
   const Bold = ({ children }) => (
     <Typography variant="body-medium" className="bold">
@@ -117,18 +114,7 @@ const Home = ({ missionText, visionText, heroText, benefits, heroImage }) => {
 
       <div id="about">
         {!isDesktop && (
-          <div>
-            <Image
-              src={heroImage.fluid.srcWebp}
-              alt={heroText}
-              lazyLoad={false}
-            >
-              <Image.Source
-                media="(max-width:1024px)"
-                srcSet={heroImage.fluid.srcWebp}
-              />
-            </Image>
-          </div>
+          <Img fluid={heroImage.fluid} objectFit="cover" alt={heroText} />
         )}
         <Grid grid={2} landscape={2} portrait={2} mobile={1} gap={16}>
           <Wrapper addClass="about" id="about">
