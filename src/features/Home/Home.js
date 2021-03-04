@@ -120,17 +120,21 @@ const Home = ({ missionText, visionText, heroText, benefits, heroImage }) => {
         </>
       </div>
 
-      {!isDesktop && (
-        <div>
-          <Image src={heroImage.fluid.srcWebp} alt={heroText} lazyLoad={false}>
-            <Image.Source
-              media="(max-width:1024px)"
-              srcSet={heroImage.fluid.srcWebp}
-            />
-          </Image>
-        </div>
-      )}
       <div id="about">
+        {!isDesktop && (
+          <div>
+            <Image
+              src={heroImage.fluid.srcWebp}
+              alt={heroText}
+              lazyLoad={false}
+            >
+              <Image.Source
+                media="(max-width:1024px)"
+                srcSet={heroImage.fluid.srcWebp}
+              />
+            </Image>
+          </div>
+        )}
         <Grid grid={2} landscape={2} portrait={2} mobile={1} gap={16}>
           <Wrapper addClass="about" id="about">
             <Typography variant="headline-2">About</Typography>
