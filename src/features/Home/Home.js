@@ -4,7 +4,6 @@ import Img from "gatsby-image"
 import { renderRichText } from "gatsby-source-contentful/rich-text"
 import scrollTo from "gatsby-plugin-smoothscroll"
 // DLS
-import Media from "react-media"
 import {
   Typography,
   Grid,
@@ -91,21 +90,16 @@ const Home = ({ missionText, visionText, heroText, benefits, heroImage }) => {
         imageAlt="Remote patient monitoring technology with a human touch"
         info={info}
       />
-      <Media
-        query="(max-width: 767px)"
-        render={() => (
-          <div className="cta-block">
-            <Button
-              mode="secondary"
-              click={() => {
-                scrollTo("#form")
-              }}
-            >
-              Contact
-            </Button>
-          </div>
-        )}
-      />
+      <div className="cta-block mobile-up">
+        <Button
+          mode="secondary"
+          click={() => {
+            scrollTo("#form")
+          }}
+        >
+          Contact
+        </Button>
+      </div>
 
       <div id="benefits">
         <Grid grid={3} landscape={1} portrait={1} mobile={1} gap={0}>
@@ -114,11 +108,11 @@ const Home = ({ missionText, visionText, heroText, benefits, heroImage }) => {
       </div>
 
       <div id="about">
-        <Media
-          query="(max-width: 767px)"
-          render={() => (
-            <Img fluid={heroImage.fluid} objectFit="cover" alt={heroText} />
-          )}
+        <Img
+          fluid={heroImage.fluid}
+          objectFit="cover"
+          alt={heroText}
+          className="mobile-up"
         />
         <Grid grid={2} landscape={2} portrait={2} mobile={1} gap={16}>
           <Wrapper addClass="about" id="about">

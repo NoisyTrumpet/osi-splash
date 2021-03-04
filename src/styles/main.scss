@@ -27,6 +27,35 @@
   border-top-left-radius: 0px !important;
 }
 
-.gatsby-image-outer-wrapper {
-  display: contents;
+// .gatsby-image-outer-wrapper {
+//   display: contents;
+// }
+
+.mobile-up {
+  @include media($mq-tablet-up) {
+    display: none;
+  }
+}
+.tablet-range {
+  @include media($mq-tablet-range) {
+    display: none !important;
+  }
+}
+
+.tablet-up {
+  @media (max-width: 1024px) and (min-width: 768px) {
+    display: none;
+  }
+}
+
+.desktop-up {
+  @include media($mq-desktop-up) {
+    display: none;
+  }
+}
+
+.mobile-down {
+  @include media($mq-mobile) {
+    display: none;
+  }
 }
