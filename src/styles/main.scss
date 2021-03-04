@@ -17,6 +17,16 @@
   margin-left: 2rem !important;
 }
 
+.dialog-container.footer {
+  @include media($mq-mobile) {
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+  }
+  padding: $space-24 !important;
+  margin-right: $space-40 !important;
+  border-top-left-radius: 0px !important;
+}
+
 .footer {
   @include media($mq-mobile) {
     margin-left: 0px !important;

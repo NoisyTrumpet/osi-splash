@@ -147,3 +147,15 @@
     margin: 0 auto;
   }
 }
+
+@include media($mq-mobile) {
+  #benefits {
+    &:first-of-type {
+      margin-bottom: $space-24;
+    }
+    button {
+      width: 75% !important;
+      margin: 0 auto;
+    }
+  }
+}
