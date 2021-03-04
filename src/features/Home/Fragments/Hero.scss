@@ -11,6 +11,7 @@
   .mages {
     img {
       margin-left: auto;
+      width: 100%;
     }
     @include media($mq-tablet-l) {
       display: grid !important;

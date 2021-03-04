@@ -101,6 +101,8 @@
 }
 
 #about {
+  div {
+  }
   padding: $space-40 0;
   @include media($mq-tablet-up) {
     padding: $space-40 rem(100px);
