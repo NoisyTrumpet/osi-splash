@@ -110,11 +110,9 @@ const Home = ({ missionText, visionText, heroText, benefits, heroImage }) => {
         </div>
       )}
       <div id="benefits">
-        <>
-          <Grid grid={3} landscape={1} portrait={1} mobile={1} gap={0}>
-            <Benefits />
-          </Grid>
-        </>
+        <Grid grid={3} landscape={1} portrait={1} mobile={1} gap={0}>
+          <Benefits />
+        </Grid>
       </div>
 
       <div id="about">
