@@ -102,7 +102,7 @@
 
 #about {
   @include media($mq-tablet-up) {
-    div {
+    div:first-of-type {
       display: grid;
       grid-template-columns: 1fr 1fr;
       grid-template-rows: 1fr;
