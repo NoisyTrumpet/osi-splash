@@ -1,7 +1,6 @@
 import React from "react"
 import { useMediaQuery } from "react-responsive"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import { Typography, InlineSVG } from "@noisytrumpet/osi-dls"
+import { Typography, InlineSVG, Image } from "@noisytrumpet/osi-dls"
 
 // Styles
 import "./Hero.scss"
@@ -16,6 +15,12 @@ const Hero = ({ image, imageAlt, info }) => {
   const notMobile = useMediaQuery({
     query: "(min-width: 766px)",
   })
+
+  const src = image.gatsbyImageData.images.sources[0].srcSet.split(",")
+
+  const tablet = src[1].split(" ")[0]
+  const desktop = src[2].split(" ")[0]
+
   return (
     <section className="hero-new">
       <div className="content">
@@ -29,13 +34,9 @@ const Hero = ({ image, imageAlt, info }) => {
           <InlineSVG className="infograph" src={info} />
         )}
         {notMobile && (
-          <div>
-            <GatsbyImage
-              image={getImage(image)}
-              layout="constrained"
-              alt={imageAlt}
-            />
-          </div>
+          <Image src={desktop} alt={imageAlt}>
+            <Image.Source media="(max-width:1024px)" srcSet={tablet} />
+          </Image>
         )}
         {isMobile && <InlineSVG className="infograph" src={info} />}
       </section>

@@ -1,7 +1,6 @@
 import React from "react"
 import { BLOCKS, MARKS } from "@contentful/rich-text-types"
 import { renderRichText } from "gatsby-source-contentful/rich-text"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import scrollTo from "gatsby-plugin-smoothscroll"
 // DLS
 import { useMediaQuery } from "react-responsive"
@@ -12,6 +11,7 @@ import {
   InlineSVG,
   Footer,
   Button,
+  Image,
 } from "@noisytrumpet/osi-dls"
 
 // SVGs
@@ -26,6 +26,11 @@ import "./Home.scss"
 const Home = ({ missionText, visionText, heroText, benefits, heroImage }) => {
   const isDesktop = useMediaQuery({ query: "(min-width: 767px)" })
   const notDesktop = useMediaQuery({ query: "(max-width: 766px)" })
+
+  const src = heroImage.gatsbyImageData.images.sources[0].srcSet.split(",")
+
+  const tablet = src[1].split(" ")[0]
+  const desktop = src[2].split(" ")[0]
 
   const Bold = ({ children }) => (
     <Typography variant="body-medium" className="bold">
@@ -89,26 +94,24 @@ const Home = ({ missionText, visionText, heroText, benefits, heroImage }) => {
   }
   return (
     <>
-      <>
-        <Hero
-          image={heroImage}
-          imageAlt="Remote patient monitoring technology with a human touch"
-          info={info}
-        />
-      </>
+      <Hero
+        image={heroImage}
+        imageAlt="Remote patient monitoring technology with a human touch"
+        info={info}
+      />
+      {notDesktop && (
+        <div className="cta-block">
+          <Button
+            mode="secondary"
+            click={() => {
+              scrollTo("#form")
+            }}
+          >
+            Contact
+          </Button>
+        </div>
+      )}
       <div id="benefits">
-        {notDesktop && (
-          <div className="cta-block">
-            <Button
-              mode="secondary"
-              click={() => {
-                scrollTo("#form")
-              }}
-            >
-              Contact
-            </Button>
-          </div>
-        )}
         <Grid grid={3} landscape={1} portrait={1} mobile={1} gap={0}>
           <Benefits />
         </Grid>
@@ -116,14 +119,9 @@ const Home = ({ missionText, visionText, heroText, benefits, heroImage }) => {
 
       <div id="about">
         {!isDesktop && (
-          <div>
-            <GatsbyImage
-              image={getImage(heroImage)}
-              alt="OsiLIFE"
-              layout="constrained"
-              placeholder="blurred"
-            />
-          </div>
+          <Image src={desktop} alt={heroText}>
+            <Image.Source media="(max-width:1024px)" srcSet={tablet} />
+          </Image>
         )}
         <Grid grid={2} landscape={2} portrait={2} mobile={1} gap={16}>
           <Wrapper addClass="about" id="about">

@@ -9,6 +9,9 @@
   position: relative;
 
   .mages {
+    img {
+      margin-left: auto;
+    }
     @include media($mq-tablet-l) {
       display: grid !important;
       grid-template-columns: 1fr 1fr !important;
@@ -25,10 +28,6 @@
     }
     @include media($mq-mobile) {
       display: block !important;
-    }
-
-    .gatsby-image-wrapper {
-      align-items: flex-end;
     }
   }
 
