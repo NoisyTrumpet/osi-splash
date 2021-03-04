@@ -44,19 +44,54 @@
       }
     }
   }
-
-  .about-wave {
-    width: 100%;
-
-    .wave {
-      .wave-inlinesvg {
-        width: 100% !important;
-        max-height: $space-64;
-      }
-    }
-  }
 }
 
 .icon-24:before {
   color: map-get($colors, "brand-white") !important;
+}
+
+#dialog-form.dialog-container {
+  display: block;
+  width: 100%;
+  position: relative;
+  .form-section {
+    display: flex;
+    flex-direction: column;
+    padding-top: $space-24;
+    margin-left: $space-40;
+    border-top-left-radius: $space-64;
+    border-top-right-radius: $space-64;
+    @include media($mq-mobile) {
+      margin-left: 0px !important;
+      margin-right: 0px !important;
+    }
+    margin-right: $space-40 !important;
+    @include media($mq-mobile) {
+      padding: $space-24 $space-12;
+    }
+    position: relative;
+    text-align: center;
+    form {
+      margin: 0 auto;
+      max-width: 1200px;
+      margin-top: $space-24;
+      position: relative;
+      .two-field-wrapper {
+        display: grid;
+        grid-template-columns: 0.9fr 1.1fr;
+        grid-template-rows: 1fr;
+        gap: 0px $space-12;
+        grid-template-areas: ". .";
+      }
+      .typography-field-label {
+        background-color: map-get($colors, "accentA") !important;
+        padding: rem(5px) !important;
+        border-radius: rem(5px) !important;
+        color: map-get($colors, "brand-white") !important;
+      }
+      button {
+        margin-left: auto;
+      }
+    }
+  }
 }

@@ -151,7 +151,7 @@
 @include media($mq-mobile) {
   #benefits {
     &:first-of-type {
-      margin-bottom: $space-24;
+      margin-bottom: $space-16;
     }
     button {
       width: 75% !important;
