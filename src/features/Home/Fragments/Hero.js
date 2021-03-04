@@ -16,10 +16,8 @@ const Hero = ({ image, imageAlt, info }) => {
     query: "(min-width: 766px)",
   })
 
-  const src = image.gatsbyImageData.images.sources[0].srcSet.split(",")
-
-  const tablet = src[1].split(" ")[0]
-  const desktop = src[2].split(" ")[0]
+  const tablet = image.fluid.srcWebp
+  const desktop = image.fluid.srcWebp
 
   return (
     <section className="hero-new">

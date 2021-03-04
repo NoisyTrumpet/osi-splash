@@ -27,10 +27,11 @@ const Home = ({ missionText, visionText, heroText, benefits, heroImage }) => {
   const isDesktop = useMediaQuery({ query: "(min-width: 767px)" })
   const notDesktop = useMediaQuery({ query: "(max-width: 766px)" })
 
-  const src = heroImage.gatsbyImageData.images.sources[0].srcSet.split(",")
+  // const src = heroImage.gatsbyImageData.images.sources[0].srcSet.split(",")
+  console.log(heroImage)
 
-  const tablet = src[1].split(" ")[0]
-  const desktop = src[2].split(" ")[0]
+  const tablet = heroImage.srcWebp
+  const desktop = heroImage.srcWebp
 
   const Bold = ({ children }) => (
     <Typography variant="body-medium" className="bold">
@@ -119,8 +120,11 @@ const Home = ({ missionText, visionText, heroText, benefits, heroImage }) => {
 
       <div id="about">
         {!isDesktop && (
-          <Image src={desktop} alt={heroText} lazyLoad={false}>
-            <Image.Source media="(max-width:1024px)" srcSet={tablet} />
+          <Image src={heroImage.fluid.srcWebp} alt={heroText} lazyLoad={false}>
+            <Image.Source
+              media="(max-width:1024px)"
+              srcSet={heroImage.fluid.srcWebp}
+            />
           </Image>
         )}
         <Grid grid={2} landscape={2} portrait={2} mobile={1} gap={16}>
