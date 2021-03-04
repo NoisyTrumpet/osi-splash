@@ -119,7 +119,7 @@ const Home = ({ missionText, visionText, heroText, benefits, heroImage }) => {
 
       <div id="about">
         {!isDesktop && (
-          <Image src={desktop} alt={heroText}>
+          <Image src={desktop} alt={heroText} lazyLoad={false}>
             <Image.Source media="(max-width:1024px)" srcSet={tablet} />
           </Image>
         )}

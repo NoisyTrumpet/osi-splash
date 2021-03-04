@@ -34,7 +34,7 @@ const Hero = ({ image, imageAlt, info }) => {
           <InlineSVG className="infograph" src={info} />
         )}
         {notMobile && (
-          <Image src={desktop} alt={imageAlt}>
+          <Image src={desktop} alt={imageAlt} lazyLoad={false}>
             <Image.Source media="(max-width:1024px)" srcSet={tablet} />
           </Image>
         )}
