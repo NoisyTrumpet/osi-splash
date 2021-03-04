@@ -4,7 +4,7 @@ import Img from "gatsby-image"
 import { renderRichText } from "gatsby-source-contentful/rich-text"
 import scrollTo from "gatsby-plugin-smoothscroll"
 // DLS
-import { useMediaQuery } from "react-responsive"
+import Media from "react-media"
 import {
   Typography,
   Grid,
@@ -24,9 +24,6 @@ import Hero from "./Fragments/Hero"
 import "./Home.scss"
 
 const Home = ({ missionText, visionText, heroText, benefits, heroImage }) => {
-  const isDesktop = useMediaQuery({ query: "(min-width: 767px)" })
-  const notDesktop = useMediaQuery({ query: "(max-width: 766px)" })
-
   const Bold = ({ children }) => (
     <Typography variant="body-medium" className="bold">
       {children}
@@ -94,18 +91,22 @@ const Home = ({ missionText, visionText, heroText, benefits, heroImage }) => {
         imageAlt="Remote patient monitoring technology with a human touch"
         info={info}
       />
-      {notDesktop && (
-        <div className="cta-block">
-          <Button
-            mode="secondary"
-            click={() => {
-              scrollTo("#form")
-            }}
-          >
-            Contact
-          </Button>
-        </div>
-      )}
+      <Media
+        query="(max-width: 767px)"
+        render={() => (
+          <div className="cta-block">
+            <Button
+              mode="secondary"
+              click={() => {
+                scrollTo("#form")
+              }}
+            >
+              Contact
+            </Button>
+          </div>
+        )}
+      />
+
       <div id="benefits">
         <Grid grid={3} landscape={1} portrait={1} mobile={1} gap={0}>
           <Benefits />
@@ -113,9 +114,12 @@ const Home = ({ missionText, visionText, heroText, benefits, heroImage }) => {
       </div>
 
       <div id="about">
-        {!isDesktop && (
-          <Img fluid={heroImage.fluid} objectFit="cover" alt={heroText} />
-        )}
+        <Media
+          query="(max-width: 767px)"
+          render={() => (
+            <Img fluid={heroImage.fluid} objectFit="cover" alt={heroText} />
+          )}
+        />
         <Grid grid={2} landscape={2} portrait={2} mobile={1} gap={16}>
           <Wrapper addClass="about" id="about">
             <Typography variant="headline-2">About</Typography>
