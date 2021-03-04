@@ -137,8 +137,10 @@
 }
 
 .grid-container {
-  button {
+  &:first-of-type {
     margin-bottom: $space-24;
+  }
+  button {
     width: 75% !important;
     margin: 0 auto;
   }
