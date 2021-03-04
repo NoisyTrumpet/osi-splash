@@ -90,8 +90,8 @@ const ContactForm = ({ title, subtitle }) => {
   }
   return (
     <TriggerableDialog>
-      <div className="form-wrapper" id="form">
-        <section className="form-section background-color-primary">
+      <div className="form-wrapper">
+        <section className="form-section background-color-primary" id="form">
           <Typography variant="headline-2" color="brand-white">
             {title}
           </Typography>
