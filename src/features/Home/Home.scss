@@ -136,11 +136,10 @@
   }
 }
 
-.cta-block {
-  display: grid;
-  place-items: center;
-  margin-bottom: $space-24;
+.grid-container {
   button {
+    margin-bottom: $space-24;
     width: 75% !important;
+    margin: 0 auto;
   }
 }
