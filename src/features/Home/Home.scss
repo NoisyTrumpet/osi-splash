@@ -101,7 +101,14 @@
 }
 
 #about {
-  div {
+  @include media($mq-tablet-up) {
+    div {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr;
+      gap: 0px 0px;
+      grid-template-areas: ". .";
+    }
   }
   padding: $space-40 0;
   @include media($mq-tablet-up) {
