@@ -47,7 +47,6 @@ module.exports = {
         // }
       },
     },
-    `gatsby-plugin-smoothscroll`,
     "gatsby-transformer-remark",
     "gatsby-transformer-sharp",
     "gatsby-plugin-react-helmet",
@@ -80,5 +79,6 @@ module.exports = {
       resolve: "gatsby-source-contentful",
       options: contentfulConfig,
     },
+    `gatsby-plugin-smoothscroll`,
   ],
 }

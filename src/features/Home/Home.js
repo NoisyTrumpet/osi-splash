@@ -27,9 +27,6 @@ const Home = ({ missionText, visionText, heroText, benefits, heroImage }) => {
   const isDesktop = useMediaQuery({ query: "(min-width: 767px)" })
   const notDesktop = useMediaQuery({ query: "(max-width: 766px)" })
 
-  // const src = heroImage.gatsbyImageData.images.sources[0].srcSet.split(",")
-  console.log(heroImage)
-
   const tablet = heroImage.srcWebp
   const desktop = heroImage.srcWebp
 

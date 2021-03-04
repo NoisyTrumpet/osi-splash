@@ -100,17 +100,17 @@
   padding: 30px;
 }
 
-#about > div {
-  @include media($mq-tablet-up) {
-    &:first-child {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: 1fr;
-      gap: 0px 0px;
-      grid-template-areas: ". .";
-    }
-  }
-}
+// #about > div {
+//   @include media($mq-tablet-up) {
+//     &:first-child {
+//       display: grid;
+//       grid-template-columns: 1fr 1fr;
+//       grid-template-rows: 1fr;
+//       gap: 0px 0px;
+//       grid-template-areas: ". .";
+//     }
+//   }
+// }
 
 #about {
   padding: $space-40 0;
@@ -160,14 +160,12 @@
   }
 }
 
-@include media($mq-mobile) {
-  #benefits {
-    &:first-of-type {
-      margin-bottom: $space-16;
-    }
-    button {
-      width: 75% !important;
-      margin: 0 auto;
-    }
+.cta-block {
+  &:first-of-type {
+    margin-bottom: $space-16;
+  }
+  button {
+    width: 75% !important;
+    margin: 0 auto;
   }
 }
