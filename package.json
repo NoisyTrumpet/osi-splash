@@ -27,7 +27,7 @@
     "@babel/preset-react": "7.12.1",
     "@babel/register": "7.12.1",
     "@contentful/rich-text-html-renderer": "^14.1.2",
-    "@noisytrumpet/osi-dls": "1.17.0",
+    "@noisytrumpet/osi-dls": "1.19.0",
     "@svgr/webpack": "^5.5.0",
     "@typescript-eslint/eslint-plugin": "2.20.0",
     "@typescript-eslint/parser": "2.20.0",
