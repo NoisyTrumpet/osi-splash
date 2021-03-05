@@ -151,7 +151,7 @@ const Home = ({ missionText, visionText, heroText, benefits, heroImage }) => {
         subtitle="Share your information below to stay up to date with the latest at OsiLIFE."
       />
 
-      <Footer />
+      <Footer footerText="The health information contained on this website is for educational purposes only and does not constitute medical advice or a guaranty of treatment, outcome, or cure. Please consult with your healthcare provider for specific medical advice. This information is not intended to create a physician-patient relationship between OsiLIFE or any physician and the reader." />
     </>
   )
 }
