@@ -9,10 +9,15 @@
   position: relative;
 
   .mages {
-    img {
-      margin-left: auto;
+    .gatsby-image-wrapper {
       width: 100%;
+      position: relative;
+      img {
+        margin-left: auto;
+      }
     }
+    position: relative;
+
     @include media($mq-tablet-l) {
       display: grid !important;
       grid-template-columns: 1fr 1fr !important;

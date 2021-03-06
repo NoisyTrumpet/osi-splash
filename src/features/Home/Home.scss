@@ -113,6 +113,14 @@
 // }
 
 #about {
+  .gatsby-image-wrapper {
+    width: 100%;
+    position: relative;
+    img {
+      margin-left: auto;
+    }
+  }
+  position: relative;
   padding: $space-40 0;
   @include media($mq-tablet-up) {
     padding: $space-40 rem(100px);

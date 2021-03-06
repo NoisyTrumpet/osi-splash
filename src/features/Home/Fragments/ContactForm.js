@@ -5,6 +5,7 @@ import { Formik, Form } from "formik"
 import {
   Typography,
   TextField,
+  TextFieldMultiline,
   Button,
   Dialog,
   DialogManager,
@@ -55,9 +56,6 @@ const ContactForm = ({ title, subtitle }) => {
   // Before rendering, call `DialogManager` to handle state and to wrap it in the ContextProvider
   const TriggerableDialog = DialogManager(FormDialog, FormDialogContext)
 
-  // const notify = () => {
-  //   toast.dark("🎥 Thanks for your submission! We'll reach out shortly.")
-  // }
   const handleOnSubmit = e => {
     const form = e
     setServerState({ submitting: true })
@@ -74,8 +72,6 @@ const ContactForm = ({ title, subtitle }) => {
         handleServerResponse(false, r, form)
       })
   }
-
-  const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
 
   const DialogTrigger = (ok, msg) => {
     const { open } = React.useContext(FormDialogContext)
@@ -118,6 +114,10 @@ const ContactForm = ({ title, subtitle }) => {
                 .nullable(),
               phone: Yup.string()
                 .required("Please enter a phone number")
+                // .matches(/^[6-9]\d{9}$/, {
+                //   message: "Please enter valid number.",
+                //   excludeEmptyString: false,
+                // })
                 .nullable(),
             })}
             onSubmit={handleOnSubmit}
@@ -150,12 +150,11 @@ const ContactForm = ({ title, subtitle }) => {
                   required
                 />
               </div>
-              <TextField
+              <TextFieldMultiline
                 label="Message"
                 name="message"
                 domId="textarea-message"
-                required
-                type="textarea"
+                minRows={3}
               />
 
               <DialogTrigger />
