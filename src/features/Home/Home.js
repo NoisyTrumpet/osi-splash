@@ -1,6 +1,6 @@
 import React from "react"
 import { BLOCKS, MARKS } from "@contentful/rich-text-types"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 import { renderRichText } from "gatsby-source-contentful/rich-text"
 import scrollTo from "gatsby-plugin-smoothscroll"
 // DLS

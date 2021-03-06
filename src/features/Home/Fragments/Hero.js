@@ -1,6 +1,6 @@
 import React from "react"
 import { Typography, InlineSVG } from "@noisytrumpet/osi-dls"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 // Styles
 import "./Hero.scss"
 
