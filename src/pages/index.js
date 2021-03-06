@@ -44,7 +44,6 @@ export const pageQuery = graphql`
       }
       heroImage {
         gatsbyImageData(
-          placeholder: BLURRED
           quality: 95
           resizingBehavior: SCALE
           width: 1200
