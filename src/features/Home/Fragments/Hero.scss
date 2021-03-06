@@ -27,7 +27,7 @@
     }
     .infograph {
       max-width: 100% !important;
-      margin: $space-64 auto 0 auto;
+      margin: $space-64 auto 0 auto !important;
       @include media($mq-tablet-l) {
         margin: $space-12 auto 0 auto !important;
       }
@@ -62,11 +62,15 @@
         font-size: 40px;
         line-height: 40px;
       }
+
+      @include media($mq-mobile-s) {
+        max-width: 100% !important;
+      }
     }
 
     .infograph {
       max-width: 100%;
-      margin: $space-64 auto 0 auto;
+      margin: $space-16 auto 0 auto;
     }
   }
 }
