@@ -19,6 +19,7 @@ const Hero = ({ image, imageAlt, info }) => {
         <InlineSVG className="infograph mobile-down desktop-up" src={info} />
 
         <GatsbyImage
+          loading="eager"
           image={heroImage}
           objectFit="constrained"
           className="mobile-down"
