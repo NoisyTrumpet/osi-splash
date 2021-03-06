@@ -43,7 +43,14 @@ export const pageQuery = graphql`
         }
       }
       heroImage {
-        gatsbyImageData(width: 1200, quality: 90, formats: [WEBP, PNG])
+        gatsbyImageData(
+          placeholder: BLURRED
+          quality: 95
+          resizingBehavior: SCALE
+          width: 1200
+          layout: CONSTRAINED
+          formats: WEBP
+        )
       }
       benefitsAll {
         title

@@ -21,7 +21,6 @@ const Hero = ({ image, imageAlt, info }) => {
         <GatsbyImage
           loading="eager"
           image={heroImage}
-          objectFit="constrained"
           className="mobile-down"
           alt={imageAlt}
         />
