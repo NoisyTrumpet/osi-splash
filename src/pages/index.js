@@ -48,7 +48,7 @@ export const pageQuery = graphql`
           resizingBehavior: SCALE
           width: 1200
           layout: CONSTRAINED
-          formats: WEBP
+          formats: [PNG, WEBP]
         )
       }
       benefitsAll {
