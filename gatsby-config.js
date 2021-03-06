@@ -67,6 +67,7 @@ module.exports = {
     //     // }
     //   },
     // },
+    "gatby-plugin-image",
     "gatsby-transformer-remark",
     "gatsby-transformer-sharp",
     "gatsby-plugin-react-helmet",
