@@ -1,11 +1,10 @@
 import React from "react"
 import { Typography, InlineSVG } from "@noisytrumpet/osi-dls"
-import { GatsbyImage } from "gatsby-plugin-image"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 // Styles
 import "./Hero.scss"
 
 const Hero = ({ image, imageAlt, info }) => {
-  const heroImage = image.gatsbyImageData
   return (
     <section className="hero-new">
       <div className="content">
@@ -20,7 +19,7 @@ const Hero = ({ image, imageAlt, info }) => {
 
         <GatsbyImage
           loading="eager"
-          image={heroImage}
+          image={getImage(image)}
           className="mobile-down"
           alt={imageAlt}
         />

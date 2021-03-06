@@ -1,6 +1,6 @@
 import React from "react"
 import { BLOCKS, MARKS } from "@contentful/rich-text-types"
-import { GatsbyImage } from "gatsby-plugin-image"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { renderRichText } from "gatsby-source-contentful/rich-text"
 import scrollTo from "gatsby-plugin-smoothscroll"
 // DLS
@@ -109,7 +109,7 @@ const Home = ({ missionText, visionText, heroText, benefits, heroImage }) => {
 
       <div id="about">
         <GatsbyImage
-          image={heroImage.gatsbyImageData}
+          image={getImage(heroImage)}
           alt={heroText}
           loading="eager"
           className="mobile-up"
