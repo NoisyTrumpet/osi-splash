@@ -48,6 +48,7 @@ export const pageQuery = graphql`
           resizingBehavior: SCALE
           width: 1200
           layout: CONSTRAINED
+          placeholder: BLURRED
           formats: WEBP
         )
       }

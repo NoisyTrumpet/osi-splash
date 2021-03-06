@@ -32,8 +32,6 @@ const Home = ({ missionText, visionText, heroText, benefits, heroImage }) => {
     <Typography htmlTagOverride="p">{children}</Typography>
   )
 
-  const imageSrc = heroImage.gatsbyImageData
-
   const options = {
     renderMark: {
       [MARKS.BOLD]: text => <Bold>{text}</Bold>,
@@ -110,7 +108,11 @@ const Home = ({ missionText, visionText, heroText, benefits, heroImage }) => {
       </div>
 
       <div id="about">
-        <GatsbyImage image={imageSrc} alt={heroText} className="mobile-up" />
+        <GatsbyImage
+          image={heroImage.gatsbyImageData}
+          alt={heroText}
+          className="mobile-up"
+        />
         <Grid grid={2} landscape={2} portrait={2} mobile={1} gap={16}>
           <Wrapper addClass="about" id="about">
             <Typography variant="headline-2">About</Typography>
