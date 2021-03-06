@@ -47,7 +47,7 @@ export const pageQuery = graphql`
           width: 800
           quality: 90
           placeholder: BLURRED
-          formats: [WEBP]
+          formats: [WEBP, PNG]
         )
       }
       benefitsAll {

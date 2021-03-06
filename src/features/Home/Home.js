@@ -1,6 +1,6 @@
 import React from "react"
 import { BLOCKS, MARKS } from "@contentful/rich-text-types"
-import { GatsbyImage } from "gatsby-plugin-image"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { renderRichText } from "gatsby-source-contentful/rich-text"
 import scrollTo from "gatsby-plugin-smoothscroll"
 // DLS
@@ -31,6 +31,8 @@ const Home = ({ missionText, visionText, heroText, benefits, heroImage }) => {
   const Text = ({ children }) => (
     <Typography htmlTagOverride="p">{children}</Typography>
   )
+
+  const imageSrc = heroImage.gatsbyImageData
 
   const options = {
     renderMark: {
@@ -108,12 +110,7 @@ const Home = ({ missionText, visionText, heroText, benefits, heroImage }) => {
       </div>
 
       <div id="about">
-        <GatsbyImage
-          image={heroImage.gatsbyImageData}
-          alt={heroText}
-          className="mobile-up"
-        />
-        {console.log(heroImage)}
+        <GatsbyImage image={imageSrc} alt={heroText} className="mobile-up" />
         <Grid grid={2} landscape={2} portrait={2} mobile={1} gap={16}>
           <Wrapper addClass="about" id="about">
             <Typography variant="headline-2">About</Typography>
