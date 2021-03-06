@@ -111,6 +111,7 @@ const Home = ({ missionText, visionText, heroText, benefits, heroImage }) => {
         <GatsbyImage
           image={heroImage.gatsbyImageData}
           alt={heroText}
+          loading="eager"
           className="mobile-up"
         />
         <Grid grid={2} landscape={2} portrait={2} mobile={1} gap={16}>
