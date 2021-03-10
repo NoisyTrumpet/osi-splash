@@ -13,7 +13,7 @@ const RootIndex = ({ data }) => {
   const heroImage = data.contentfulSplashPage.heroImage
   return (
     <Layout location="/">
-      <SEO />
+      <SEO title="OsiLIFE" description={missionText} />
       <Home
         missionText={missionText}
         visionText={visionText}
