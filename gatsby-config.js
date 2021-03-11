@@ -26,7 +26,7 @@ if (!spaceId || !accessToken) {
 module.exports = {
   siteMetadata: {
     title: "OsiLIFE",
-    description: "OsiLIFE Description",
+    description: `OsiLIFE combines reliable technology with a human touch to partner with doctors and their clinical team to provide a more personalized healthcare experience for their patients.`,
     image: "https://www.noisytrumpet.com/wp-content/uploads/2021/01/osi.png",
     url: "https://www.osilife.com/",
   },
