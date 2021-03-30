@@ -12,7 +12,7 @@ const Nav = () => {
   return (
     <nav role="navigation" className="navigation">
       <div className="nav-logo-wrapper">
-        <Link to="/">
+        <Link to="/" alt="OsiLIFE Main Nav Logo">
           <InlineSVG src={logo} />
         </Link>
       </div>

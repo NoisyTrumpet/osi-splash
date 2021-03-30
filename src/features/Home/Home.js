@@ -72,7 +72,7 @@ const Home = ({ missionText, visionText, heroText, benefits, heroImage }) => {
             {benefit.icon === "remote-icon" && (
               <InlineSVG className="icon" src={remote} />
             )}
-            <Typography variant="headline-4" color="brand-white">
+            <Typography variant="headline-4" htmlTagOverride="p" color="brand-white">
               {benefit.title}
             </Typography>
             <Typography variant="body" color="brand-white">
